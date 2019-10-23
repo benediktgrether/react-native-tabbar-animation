@@ -6,7 +6,7 @@ import TabItem from "./TabItem";
 class TabBar extends Component {
   render() {
     const { navigation } = this.props;
-    const { routes } = navigation.state;
+    const { routes, index } = navigation.state;
     return (
       <View
         style={{
@@ -17,7 +17,12 @@ class TabBar extends Component {
         }}
       >
         {routes.map((route, i) => (
-          <TabItem navigation={navigation} key={route.routeName} {...route} />
+          <TabItem
+            navigation={navigation}
+            key={route.routeName}
+            {...route}
+            isActive={index === i}
+          />
         ))}
       </View>
     );

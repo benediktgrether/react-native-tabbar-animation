@@ -14,7 +14,7 @@ export default class SearchScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#333",
+    backgroundColor: "#3c9d9b",
     alignItems: "center",
     justifyContent: "center"
   }
