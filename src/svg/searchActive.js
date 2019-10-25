@@ -24,7 +24,8 @@ export default class SearchActiveIcon extends Component {
     const { anim } = this.state;
     Animated.timing(anim, {
       toValue: 1,
-      duration: 10000
+      duration: 10000,
+      useNativeDriver: true
     }).start();
   };
 

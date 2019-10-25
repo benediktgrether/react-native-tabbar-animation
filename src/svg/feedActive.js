@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated } from "react-native";
+import { TouchableWithoutFeedback, Animated, Easing } from "react-native";
 import { Svg, Path } from "react-native-svg";
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
@@ -24,7 +24,9 @@ export default class FeedActiveIcon extends Component {
     const { anim } = this.state;
     Animated.timing(anim, {
       toValue: 1,
-      duration: 10000
+      easing: Easing.bezier(0.445, 0.05, 0.55, 0.95),
+      duration: 10000,
+      useNativeDriver: true
     }).start();
   };
 
