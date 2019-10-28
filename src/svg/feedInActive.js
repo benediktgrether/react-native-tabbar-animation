@@ -13,6 +13,7 @@ export default class FeedInActiveIcon extends Component {
           fill="none"
           stroke="#4e4e50"
           stroke-miterlimit="10"
+          strokeDasharray="150"
           strokeWidth="3"
         />
       </Svg>

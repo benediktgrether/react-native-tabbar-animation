@@ -1,36 +1,34 @@
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated } from "react-native";
+import { TouchableWithoutFeedback, Animated, Easing } from "react-native";
 import { Svg, Path, G } from "react-native-svg";
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-getInitinalStat = () => {
-  const anim = new Animated.Value(0);
-  const offset = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [1000, 0]
-  });
-  return { anim, offset };
-};
+export default class FeedActiveIcon extends Component {
+  constructor() {
+    super();
+    this.offsetValue = new Animated.Value(0);
+  }
 
-export default class ProfilActiveIcon extends Component {
-  state = getInitinalStat();
+  componentDidMount() {
+    this.offset();
+  }
 
-  // componentWillMount() {
-  //   state = getInitinalStat();
-  // }
-
-  renderAnimation = () => {
-    const { anim } = this.state;
-    Animated.timing(anim, {
+  offset() {
+    this.offsetValue.setValue(0);
+    Animated.timing(this.offsetValue, {
       toValue: 1,
-      duration: 10000,
+      duration: 1000,
+      easing: Easing.inOut(Easing.quad),
       useNativeDriver: true
     }).start();
-  };
+  }
 
   render() {
-    const { offset } = this.state;
+    const offset = this.offsetValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [95, 0]
+    });
     return (
       <Svg width="42.22" height="39.55" viewBox="0 0 42.22 39.55">
         <G>
@@ -57,7 +55,7 @@ export default class ProfilActiveIcon extends Component {
             transform="translate(-0.77 -2.07)"
             fill="none"
             stroke="#25bfa9"
-            strokeDasharray="1000"
+            strokeDasharray="95"
             strokeDashoffset={offset}
             stroke-miterlimit="10"
             strokeWidth="3"
@@ -67,7 +65,7 @@ export default class ProfilActiveIcon extends Component {
             transform="translate(-0.77 -2.07)"
             fill="none"
             stroke="#25bfa9"
-            strokeDasharray="1000"
+            strokeDasharray="95"
             strokeDashoffset={offset}
             stroke-miterlimit="10"
             strokeWidth="3"
@@ -75,7 +73,7 @@ export default class ProfilActiveIcon extends Component {
         </G>
 
         {/* Starting Animation Rendering when it becames Active State */}
-        {this.renderAnimation()}
+        {this.offset()}
       </Svg>
     );
   }

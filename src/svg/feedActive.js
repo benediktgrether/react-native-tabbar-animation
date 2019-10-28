@@ -4,34 +4,31 @@ import { Svg, Path } from "react-native-svg";
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-getInitinalStat = () => {
-  const anim = new Animated.Value(0);
-  const offset = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [1000, 0]
-  });
-  return { anim, offset };
-};
-
 export default class FeedActiveIcon extends Component {
-  state = getInitinalStat();
+  constructor() {
+    super();
+    this.offsetValue = new Animated.Value(0);
+  }
 
-  // componentWillMount() {
-  //   state = getInitinalStat();
-  // }
+  componentDidMount() {
+    this.offset();
+  }
 
-  renderAnimation = () => {
-    const { anim } = this.state;
-    Animated.timing(anim, {
+  offset() {
+    this.offsetValue.setValue(0);
+    Animated.timing(this.offsetValue, {
       toValue: 1,
-      easing: Easing.bezier(0.445, 0.05, 0.55, 0.95),
-      duration: 10000,
+      duration: 1000,
+      easing: Easing.inOut(Easing.quad),
       useNativeDriver: true
     }).start();
-  };
+  }
 
   render() {
-    const { offset } = this.state;
+    const offset = this.offsetValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [150, 0]
+    });
     return (
       <Svg width="42.22" height="39.55" viewBox="0 0 42.22 39.55">
         <Path
@@ -39,7 +36,6 @@ export default class FeedActiveIcon extends Component {
           transform="translate(-0.89 -2.23)"
           fill="none"
           stroke="#4e4e50"
-          stroke-miterlimit="10"
           strokeWidth="3"
         />
         <AnimatedPath
@@ -47,14 +43,14 @@ export default class FeedActiveIcon extends Component {
           transform="translate(-0.89 -2.23)"
           fill="none"
           stroke="#25bfa9"
-          strokeDasharray="1000"
+          strokeDasharray="150"
           strokeDashoffset={offset}
           // stroke-miterlimit="10"
           strokeWidth="3"
         />
 
         {/* Starting Animation Rendering when it becames Active State */}
-        {this.renderAnimation()}
+        {this.offset()}
       </Svg>
     );
   }

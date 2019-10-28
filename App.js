@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+console.disableYellowBox = true;
 
 import Routes from "./src/routes/Routes";
 

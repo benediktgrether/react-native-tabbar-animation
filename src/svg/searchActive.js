@@ -1,36 +1,33 @@
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated } from "react-native";
+import { TouchableWithoutFeedback, Animated, Easing } from "react-native";
 import { Svg, Path } from "react-native-svg";
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-getInitinalStat = () => {
-  const anim = new Animated.Value(0);
-  const offset = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [1000, 0]
-  });
-  return { anim, offset };
-};
-
 export default class SearchActiveIcon extends Component {
-  state = getInitinalStat();
+  constructor() {
+    super();
+    this.offsetValue = new Animated.Value(0);
+  }
 
-  // componentWillMount() {
-  //   state = getInitinalStat();
-  // }
-
-  renderAnimation = () => {
-    const { anim } = this.state;
-    Animated.timing(anim, {
+  componentDidMount() {
+    this.offset();
+  }
+  offset() {
+    this.offsetValue.setValue(0);
+    Animated.timing(this.offsetValue, {
       toValue: 1,
-      duration: 10000,
+      duration: 1000,
+      easing: Easing.inOut(Easing.quad),
       useNativeDriver: true
     }).start();
-  };
+  }
 
   render() {
-    const { offset } = this.state;
+    const offset = this.offsetValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [125, 0]
+    });
     return (
       <Svg width="42.22" height="39.55" viewBox="0 0 42.22 39.55">
         <Path
@@ -46,14 +43,14 @@ export default class SearchActiveIcon extends Component {
           transform="translate(-2.22 -2.27)"
           fill="none"
           stroke="#25bfa9"
-          strokeDasharray="1000"
+          strokeDasharray="125"
           strokeDashoffset={offset}
           stroke-miterlimit="10"
           strokeWidth="3"
         />
 
         {/* Starting Animation Rendering when it becames Active State */}
-        {this.renderAnimation()}
+        {this.offset()}
       </Svg>
     );
   }
