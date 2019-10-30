@@ -6,9 +6,6 @@ let Icon = {};
 export default class StaticTabbar extends Component {
   render() {
     const { tabsIcon } = this.props;
-
-    // tabsIcon.map(({ name }, key) => (Icon[key] = name));
-    // console.log(Icon);
     return (
       <View style={styles.container}>
         {tabsIcon.map(({ name }, key) => (

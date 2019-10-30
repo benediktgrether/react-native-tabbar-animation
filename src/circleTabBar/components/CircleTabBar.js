@@ -72,13 +72,6 @@ const right = shape
 const d = `${left}${tab}${right}`;
 
 export default class CircleTabBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: tabsIcon
-    };
-  }
-
   render() {
     // console.log(this.state.data);
     return (
