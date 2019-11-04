@@ -62,10 +62,7 @@ export default class StaticTabbar extends Component {
               {...{ key }}
             >
               <Animated.View style={[styles.tab, { opacity }]}>
-                {/* {(Icon = name)} */}
-                {/* <Icon /> */}
                 {name}
-                {/* <Text>{key}</Text> */}
               </Animated.View>
             </TouchableWithoutFeedback>
           );
