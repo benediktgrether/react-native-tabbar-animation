@@ -12,17 +12,17 @@ import * as shape from "d3-shape";
 
 import StaticTabbar from "./StaticTabbar";
 
-import feedInActive from "./../svg/feedInActive";
-import gridInActive from "./../svg/gridInActive";
-import searchInActive from "./../svg/searchInActive";
-import profilInActive from "./../svg/profilInActive";
+import FeedInActive from "./../svg/feedInActive";
+import GridInActive from "./../svg/gridInActive";
+import SearchInActive from "./../svg/searchInActive";
+import ProfilInActive from "./../svg/profilInActive";
 
 const tabsIcon = [
-  { name: feedInActive },
-  { name: feedInActive },
-  { name: gridInActive },
-  { name: searchInActive },
-  { name: profilInActive }
+  { name: <FeedInActive /> },
+  { name: <FeedInActive /> },
+  { name: <GridInActive /> },
+  { name: <SearchInActive /> },
+  { name: <ProfilInActive /> }
 ];
 
 const { width } = Dimensions.get("window");
@@ -64,6 +64,7 @@ const right = shape
   // Pass some Data for the Curve Function
   // Draw 3 Curved for left active and right Tab.
   { x: width + tabWidth, y: 0 },
+  { x: width * 2, y: 0 },
   { x: width * 2, y: height },
   { x: 0, y: height },
   { x: 0, y: 0 }
@@ -72,16 +73,23 @@ const right = shape
 const d = `${left}${tab}${right}`;
 
 export default class CircleTabBar extends Component {
+  value = new Animated.Value(-width);
+
   render() {
+    const { value: translateX } = this;
     // console.log(this.state.data);
     return (
       <>
         <View {...{ width, height }}>
-          <AnimatedSvg width={width * 2} {...{ height }}>
+          <AnimatedSvg
+            width={width * 2}
+            style={{ transform: [{ translateX }] }}
+            {...{ height }}
+          >
             <Path {...{ d }} fill="white" />
           </AnimatedSvg>
           <View style={StyleSheet.absoluteFill}>
-            <StaticTabbar {...{ tabsIcon }} />
+            <StaticTabbar value={translateX} {...{ tabsIcon }} />
           </View>
         </View>
         <SafeAreaView style={styles.safeArea} />
