@@ -118,6 +118,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "white",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    shadowOpacity: 0.75,
+    shadowRadius: 1,
+    shadowColor: "black",
+    shadowOffset: { height: 1, width: 0 }
   }
 });

@@ -6,7 +6,7 @@ export default class GridInActiveIcon extends Component {
   render() {
     return (
       // <TouchableWithoutFeedback onPress={this.hndPress}>
-      <Svg width="39.6" height="39.6" viewBox="0 0 39.6 39.6">
+      <Svg width="22" height="22" viewBox="0 0 39.6 39.6">
         <G>
           <Rect y="16.8" width="6" height="6" fill="#4e4e50" />
           <Rect x="16.8" y="16.8" width="6" height="6" fill="#4e4e50" />
