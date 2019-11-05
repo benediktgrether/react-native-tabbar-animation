@@ -83,8 +83,8 @@ const right = shape
   // Pass some Data for the Curve Function
   // Draw 3 Curved for left active and right Tab.
   { x: width + tabWidth, y: 0 },
-  { x: width * 2, y: 0 },
-  { x: width * 2, y: height },
+  { x: width * 2.5, y: 0 },
+  { x: width * 2.5, y: height },
   { x: 0, y: height },
   { x: 0, y: 0 }
 ]);
@@ -101,7 +101,7 @@ export default class CircleTabBar extends Component {
       <>
         <View {...{ width, height }}>
           <AnimatedSvg
-            width={width * 2}
+            width={width * 2.5}
             style={{ transform: [{ translateX }] }}
             {...{ height }}
           >
