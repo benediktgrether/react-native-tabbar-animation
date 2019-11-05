@@ -10,6 +10,7 @@ import {
 import { Svg, Path } from "react-native-svg";
 import * as shape from "d3-shape";
 
+// import StaticTabbar from "./StaticTabbar";
 import StaticTabbar from "./StaticTabbar";
 
 import FeedInActive from "./../svg/feedInActive";
@@ -24,6 +25,24 @@ const tabsIcon = [
   { name: <SearchInActive /> },
   { name: <ProfilInActive /> }
 ];
+
+// const tabsIcon = [
+//   {
+//     name: "grid"
+//   },
+//   {
+//     name: "list"
+//   },
+//   {
+//     name: "repeat"
+//   },
+//   {
+//     name: "map"
+//   },
+//   {
+//     name: "user"
+//   }
+// ];
 
 const { width } = Dimensions.get("window");
 const tabWidth = width / tabsIcon.length;
@@ -90,6 +109,7 @@ export default class CircleTabBar extends Component {
           </AnimatedSvg>
           <View style={StyleSheet.absoluteFill}>
             <StaticTabbar value={translateX} {...{ tabsIcon }} />
+            {console.log(this.value)}
           </View>
         </View>
         <SafeAreaView style={styles.safeArea} />

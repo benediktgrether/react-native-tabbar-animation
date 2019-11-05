@@ -8,30 +8,13 @@ import {
   Dimensions
 } from "react-native";
 
-let Icon = {};
+import { Feather as Icon } from "@expo/vector-icons";
+
+// let Icon = {};
 
 const { width } = Dimensions.get("window");
 
-// onPress = index => {
-//   // const { value, tabsIcon } = this.props;
-//   const tabsWidth = width / tabsIcon.length;
-//   Animated.spring(value, {
-//     toValue: -width + tabsWidth * index,
-//     useNativeDriver: true
-//   }).start();
-// };
-
 export default class StaticTabbar extends Component {
-  // values = [];
-
-  // constructor(props) {
-  //   super(props);
-  //   const { tabsIcon } = this.props;
-  //   this.values = tabsIcon.map(
-  //     (name, index) => new Animated.Value(index === 0 ? 1 : 0)
-  //   );
-  // }
-
   onPress = index => {
     const { value, tabsIcon } = this.props;
     const tabsWidth = width / tabsIcon.length;
@@ -43,19 +26,23 @@ export default class StaticTabbar extends Component {
 
   render() {
     const { tabsIcon, value } = this.props;
-    console.log(tabsIcon.length);
+    const tabWidth = width / tabsIcon.length;
     return (
       <View style={styles.container}>
         {tabsIcon.map(({ name }, key) => {
-          const tabsWidth = width / tabsIcon.length;
-          const cursor = tabsWidth * key;
+          // Hello
+
           const opacity = value.interpolate({
-            inputRange: [cursor - tabsWidth, cursor, cursor + tabsWidth],
+            inputRange: [
+              -width + tabWidth * (key - 1),
+              -width + tabWidth * key,
+              -width + tabWidth * (key + 1)
+            ],
             outputRange: [1, 0, 1],
             extrapolate: "clamp"
           });
 
-          console.log(opacity);
+          console.log(this.animationValue);
           return (
             <TouchableWithoutFeedback
               onPress={() => this.onPress(key)}
@@ -63,6 +50,7 @@ export default class StaticTabbar extends Component {
             >
               <Animated.View style={[styles.tab, { opacity }]}>
                 {name}
+                {/* <Icon name={name} color="black" size={25} /> */}
               </Animated.View>
             </TouchableWithoutFeedback>
           );
