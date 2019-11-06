@@ -11,10 +11,10 @@ export default function App() {
     // <View style={styles.container}>
     //   <Text>Open up App.js to start working on your app!</Text>
     // </View>
-    // <Routes />
-    <View style={styles.container}>
-      <CircleTabBar />
-    </View>
+    <Routes />
+    // <View style={styles.container}>
+    //   <CircleTabBar />
+    // </View>
   );
 }
 
