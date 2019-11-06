@@ -7,11 +7,29 @@ const AnimatedPath = Animated.createAnimatedComponent(Path);
 export default class FeedActiveIcon extends Component {
   constructor() {
     super();
+    this.state = {
+      rotateY: 0,
+      fill: "none"
+    };
+
+    let fillColor = false;
     this.offsetValue = new Animated.Value(0);
+    this.rotateYValue = new Animated.Value(0);
+
+    this.rotateYValue.addListener(rotateY => {
+      this.setState({ rotateY: rotateY.value });
+      if (rotateY.value >= 0.5 && fillColor == false) {
+        fillColor = true;
+        console.log("test");
+        this.state.fill = "#25bfa9";
+        console.log(this.state.fill);
+      }
+    });
   }
 
   componentDidMount() {
-    this.offset();
+    // this.offset();
+    this.rotation();
   }
 
   offset() {
@@ -24,34 +42,51 @@ export default class FeedActiveIcon extends Component {
     }).start();
   }
 
+  rotation() {
+    Animated.timing(this.rotateYValue, {
+      toValue: 1,
+      duration: 1000,
+      easing: Easing.inOut(Easing.quad),
+      useNativeDriver: true
+    }).start();
+  }
+
   render() {
     const offset = this.offsetValue.interpolate({
       inputRange: [0, 1],
       outputRange: [150, 0]
     });
-    return (
-      <Svg width="42.22" height="39.55" viewBox="0 0 42.22 39.55">
-        <Path
-          d="M41.61,24.24V37.56a2.71,2.71,0,0,1-2.71,2.71H28.27a2.71,2.71,0,0,1-2.71-2.71v-8a3.57,3.57,0,1,0-7.13,0v8a2.7,2.7,0,0,1-2.7,2.71H5.09a2.7,2.7,0,0,1-2.7-2.71V24.24a4.54,4.54,0,0,1,1.32-3.19L20.22,4.46A2.51,2.51,0,0,1,22,3.73a2.47,2.47,0,0,1,1.77.73L40.29,21.05A4.54,4.54,0,0,1,41.61,24.24Z"
-          transform="translate(-0.89 -2.23)"
-          fill="none"
-          stroke="#4e4e50"
-          strokeWidth="3"
-        />
-        <AnimatedPath
-          d="M41.61,24.24V37.56a2.71,2.71,0,0,1-2.71,2.71H28.27a2.71,2.71,0,0,1-2.71-2.71v-8a3.57,3.57,0,1,0-7.13,0v8a2.7,2.7,0,0,1-2.7,2.71H5.09a2.7,2.7,0,0,1-2.7-2.71V24.24a4.54,4.54,0,0,1,1.32-3.19L20.22,4.46A2.51,2.51,0,0,1,22,3.73a2.47,2.47,0,0,1,1.77.73L40.29,21.05A4.54,4.54,0,0,1,41.61,24.24Z"
-          transform="translate(-0.89 -2.23)"
-          fill="none"
-          stroke="#25bfa9"
-          strokeDasharray="150"
-          strokeDashoffset={offset}
-          // stroke-miterlimit="10"
-          strokeWidth="3"
-        />
 
-        {/* Starting Animation Rendering when it becames Active State */}
-        {this.offset()}
-      </Svg>
+    const rotateY = this.rotateYValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "180deg"]
+    });
+    const { fill } = this.state;
+    return (
+      <Animated.View style={{ transform: [{ rotateY }] }}>
+        <Svg width="31.64" height="29.69" viewBox="0 0 31.64 29.69">
+          <Path
+            d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
+            transform="translate(-0.18 -0.15)"
+            fill="none"
+            stroke="#4e4e50"
+            strokeWidth="3"
+          />
+          <AnimatedPath
+            d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
+            transform="translate(-0.18 -0.15)"
+            fill={fill}
+            stroke="#25bfa9"
+            strokeDasharray="150"
+            strokeDashoffset={offset}
+            // stroke-miterlimit="10"
+            strokeWidth="3"
+          />
+
+          {/* Starting Animation Rendering when it becames Active State */}
+          {/* {this.offset()} */}
+        </Svg>
+      </Animated.View>
     );
   }
 }

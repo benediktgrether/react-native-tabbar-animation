@@ -33,20 +33,21 @@ class TabItem extends Component {
     this.props.navigation.navigate(this.props.routeName);
   };
   render() {
-    const { routeName, isActive } = this.props;
+    const { routeName, isActive, label } = this.props;
     const Geticons = tabBarIcons[isActive ? "active" : "inactive"][routeName];
+    let ShowLabel;
+    if (label == true) {
+      ShowLabel = routeName;
+    }
+    // const ShowLabel = routeName[label ? true : false];
+    // console.log(ShowLabel);
+    // console.log(ShowLabel, label);
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "space-around",
-          alignItems: "center"
-        }}
-      >
+      <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.hndPress} style={styles.button}>
-          <View>
+          <View style={{ alignItems: "center" }}>
             <Geticons />
-            <Text>{routeName}</Text>
+            <Text>{ShowLabel}</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
@@ -57,12 +58,12 @@ class TabItem extends Component {
 export default TabItem;
 
 const styles = StyleSheet.create({
-  rundObject: {
-    height: 75,
-    width: 75,
-    borderRadius: 50,
-    backgroundColor: "blue"
+  container: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center"
   },
+
   button: {
     flex: 1,
     justifyContent: "center",
