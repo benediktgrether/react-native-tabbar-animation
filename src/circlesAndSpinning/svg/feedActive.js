@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated, Easing } from "react-native";
-import { Svg, Path } from "react-native-svg";
+import { TouchableWithoutFeedback, Animated, Easing, View } from "react-native";
+import { Svg, Path, Circle } from "react-native-svg";
+
+// Make Own Animation Component
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 export default class FeedActiveIcon extends Component {
   constructor() {
@@ -15,6 +18,8 @@ export default class FeedActiveIcon extends Component {
 
     let fillColor = false;
     this.rotateYValue = new Animated.Value(0);
+    this.radiusValue = new Animated.Value(0);
+    this.strokeWidthValue = new Animated.Value(0);
 
     this.rotateYValue.addListener(rotateY => {
       this.setState({ rotateY: rotateY.value });
@@ -30,16 +35,31 @@ export default class FeedActiveIcon extends Component {
   }
 
   componentDidMount() {
-    this.rotation();
+    this.animationCircle();
   }
 
-  rotation() {
-    Animated.timing(this.rotateYValue, {
-      toValue: 1,
-      duration: 1000,
-      easing: Easing.inOut(Easing.quad),
-      useNativeDriver: true
-    }).start();
+  animationCircle() {
+    Animated.parallel([
+      Animated.timing(this.radiusValue, {
+        toValue: 1,
+        duration: 400,
+        easing: Easing.inOut(Easing.quad),
+        useNativeDriver: true
+      }),
+      Animated.timing(this.strokeWidthValue, {
+        toValue: 1,
+        delay: 200,
+        duration: 400,
+        useNativeDriver: true
+      }),
+      Animated.timing(this.rotateYValue, {
+        toValue: 1,
+        delay: 100,
+        duration: 400,
+        // easing: Easing.inOut(Easing.quad),
+        useNativeDriver: true
+      })
+    ]).start();
   }
 
   render() {
@@ -47,19 +67,49 @@ export default class FeedActiveIcon extends Component {
       inputRange: [0, 1],
       outputRange: ["0deg", "180deg"]
     });
+
+    const changeRadius = this.radiusValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0", "33"]
+    });
+
+    const changeStrokeWidth = this.strokeWidthValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["5", "0"]
+    });
+
     const { fill, stroke } = this.state;
     return (
-      <Animated.View style={{ transform: [{ rotateY }] }}>
-        <Svg width="31.64" height="29.69" viewBox="0 0 31.64 29.69">
-          <Path
-            d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
-            transform="translate(-0.18 -0.15)"
-            fill={fill}
-            stroke={stroke}
-            strokeWidth="3"
-          />
-        </Svg>
-      </Animated.View>
+      <>
+        <Animated.View style={{ transform: [{ rotateY }] }}>
+          <Svg width="31.64" height="29.69" viewBox="0 0 31.64 29.69">
+            <Path
+              d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
+              transform="translate(-0.18 -0.15)"
+              fill={fill}
+              stroke={stroke}
+              strokeWidth="3"
+            />
+          </Svg>
+        </Animated.View>
+        <View style={{ position: "absolute", top: -18, left: -25 }}>
+          <Svg
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+            // style={{ backgroundColor: "rgba(1, 1, 1, 0.5)" }}
+          >
+            <AnimatedCircle
+              cx="40"
+              cy="35"
+              r={changeRadius}
+              fill="none"
+              stroke="#25bfa9"
+              strokeWidth={changeStrokeWidth}
+            />
+          </Svg>
+        </View>
+      </>
     );
   }
 }
