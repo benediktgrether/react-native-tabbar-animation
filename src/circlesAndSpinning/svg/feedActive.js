@@ -14,7 +14,6 @@ export default class FeedActiveIcon extends Component {
     const colorValue = "#25bfa9";
 
     let fillColor = false;
-    this.offsetValue = new Animated.Value(0);
     this.rotateYValue = new Animated.Value(0);
 
     this.rotateYValue.addListener(rotateY => {
