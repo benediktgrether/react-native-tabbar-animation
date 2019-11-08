@@ -4,6 +4,7 @@ import { Svg, Path, Circle } from "react-native-svg";
 
 // Make Own Animation Component
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 export default class FeedActiveIcon extends Component {
   constructor() {
@@ -17,9 +18,12 @@ export default class FeedActiveIcon extends Component {
     const colorValue = "#25bfa9";
 
     let fillColor = false;
-    this.value = new Animated.Value(0);
 
-    this.value.addListener(rotateY => {
+    this.rotateYValue = new Animated.Value(0);
+    this.radiusValue = new Animated.Value(0);
+    this.strokeWidthValue = new Animated.Value(0);
+
+    this.rotateYValue.addListener(rotateY => {
       this.setState({ rotateY: rotateY.value });
       if (rotateY.value >= 0.5 && fillColor == false) {
         // fill Color on True to get the change only one Time
@@ -38,22 +42,22 @@ export default class FeedActiveIcon extends Component {
 
   animationCircle() {
     Animated.parallel([
-      Animated.timing(this.value, {
+      Animated.timing(this.radiusValue, {
         toValue: 1,
-        duration: 400,
+        duration: 1000,
         easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       }),
-      Animated.timing(this.value, {
+      Animated.timing(this.strokeWidthValue, {
         toValue: 1,
         delay: 200,
         duration: 400,
         useNativeDriver: true
       }),
-      Animated.timing(this.value, {
+      Animated.timing(this.rotateYValue, {
         toValue: 1,
         delay: 100,
-        duration: 400,
+        duration: 1000,
         // easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       })
@@ -61,17 +65,17 @@ export default class FeedActiveIcon extends Component {
   }
 
   render() {
-    const rotateY = this.value.interpolate({
+    const rotateY = this.rotateYValue.interpolate({
       inputRange: [0, 1],
       outputRange: ["0deg", "180deg"]
     });
 
-    const changeRadius = this.value.interpolate({
+    const changeRadius = this.radiusValue.interpolate({
       inputRange: [0, 1],
       outputRange: ["0", "33"]
     });
 
-    const changeStrokeWidth = this.value.interpolate({
+    const changeStrokeWidth = this.strokeWidthValue.interpolate({
       inputRange: [0, 1],
       outputRange: ["5", "0"]
     });
@@ -81,7 +85,7 @@ export default class FeedActiveIcon extends Component {
       <>
         <Animated.View style={{ transform: [{ rotateY }] }}>
           <Svg width="31.64" height="29.69" viewBox="0 0 31.64 29.69">
-            <Path
+            <AnimatedPath
               d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
               transform="translate(-0.18 -0.15)"
               fill={fill}
