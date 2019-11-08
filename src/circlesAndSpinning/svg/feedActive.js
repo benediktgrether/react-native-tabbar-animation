@@ -17,11 +17,9 @@ export default class FeedActiveIcon extends Component {
     const colorValue = "#25bfa9";
 
     let fillColor = false;
-    this.rotateYValue = new Animated.Value(0);
-    this.radiusValue = new Animated.Value(0);
-    this.strokeWidthValue = new Animated.Value(0);
+    this.value = new Animated.Value(0);
 
-    this.rotateYValue.addListener(rotateY => {
+    this.value.addListener(rotateY => {
       this.setState({ rotateY: rotateY.value });
       if (rotateY.value >= 0.5 && fillColor == false) {
         // fill Color on True to get the change only one Time
@@ -40,19 +38,19 @@ export default class FeedActiveIcon extends Component {
 
   animationCircle() {
     Animated.parallel([
-      Animated.timing(this.radiusValue, {
+      Animated.timing(this.value, {
         toValue: 1,
         duration: 400,
         easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       }),
-      Animated.timing(this.strokeWidthValue, {
+      Animated.timing(this.value, {
         toValue: 1,
         delay: 200,
         duration: 400,
         useNativeDriver: true
       }),
-      Animated.timing(this.rotateYValue, {
+      Animated.timing(this.value, {
         toValue: 1,
         delay: 100,
         duration: 400,
@@ -63,17 +61,17 @@ export default class FeedActiveIcon extends Component {
   }
 
   render() {
-    const rotateY = this.rotateYValue.interpolate({
+    const rotateY = this.value.interpolate({
       inputRange: [0, 1],
       outputRange: ["0deg", "180deg"]
     });
 
-    const changeRadius = this.radiusValue.interpolate({
+    const changeRadius = this.value.interpolate({
       inputRange: [0, 1],
       outputRange: ["0", "33"]
     });
 
-    const changeStrokeWidth = this.strokeWidthValue.interpolate({
+    const changeStrokeWidth = this.value.interpolate({
       inputRange: [0, 1],
       outputRange: ["5", "0"]
     });
