@@ -44,20 +44,20 @@ export default class FeedActiveIcon extends Component {
     Animated.parallel([
       Animated.timing(this.radiusValue, {
         toValue: 1,
-        duration: 1000,
+        duration: 400,
         easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       }),
       Animated.timing(this.strokeWidthValue, {
         toValue: 1,
-        delay: 200,
+        delay: 100,
         duration: 400,
         useNativeDriver: true
       }),
       Animated.timing(this.rotateYValue, {
         toValue: 1,
         delay: 100,
-        duration: 1000,
+        duration: 400,
         // easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       })
