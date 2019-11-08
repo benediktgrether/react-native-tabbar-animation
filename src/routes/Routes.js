@@ -7,9 +7,9 @@ import SearchScreen from "./../screen/SearchScreen";
 import SettingsScreen from "./../screen/SettingsScreen";
 // import TabBar from "../components/TabBarTesting";
 
-// import TabBar from "./../components/TabBar";
+import TabBar from "./../strokeAnimation/components/TabBar";
 
-import TabBar from "./../circlesAndSpinning/components/TabBar";
+// import TabBar from "./../circlesAndSpinning/components/TabBar";
 
 const bottomTabBar = createBottomTabNavigator(
   {
