@@ -1,17 +1,10 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import {
-  TouchableWithoutFeedback,
-  Animated,
-  Easing,
-  View,
-  StyleSheet
-} from 'react-native';
+import { Animated, Easing, View, StyleSheet } from 'react-native';
 import { Svg, Path, Circle, G } from 'react-native-svg';
 
 // Make Own Animation Component
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 export default class FeedActiveIcon extends Component {
   constructor() {
@@ -29,6 +22,7 @@ export default class FeedActiveIcon extends Component {
     this.rotateYValue = new Animated.Value(0);
     this.radiusValue = new Animated.Value(0);
     this.strokeWidthValue = new Animated.Value(0);
+    this.scaleValue = new Animated.Value(0);
 
     this.rotateYValue.addListener((rotateY) => {
       this.setState({ rotateY: rotateY.value });
@@ -67,6 +61,12 @@ export default class FeedActiveIcon extends Component {
         duration: 400,
         // easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
+      }),
+      Animated.timing(this.scaleValue, {
+        toValue: 2,
+        delay: 100,
+        duration: 400,
+        useNativeDriver: true
       })
     ]).start();
   }
@@ -75,6 +75,10 @@ export default class FeedActiveIcon extends Component {
     const rotateY = this.rotateYValue.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '180deg']
+    });
+    const scale = this.scaleValue.interpolate({
+      inputRange: [0, 1, 2],
+      outputRange: [1, 1.5, 1]
     });
 
     const changeRadius = this.radiusValue.interpolate({
@@ -90,7 +94,7 @@ export default class FeedActiveIcon extends Component {
     const { fill, stroke } = this.state;
     return (
       <>
-        <Animated.View style={{ transform: [{ rotateY }] }}>
+        <Animated.View style={{ transform: [{ rotateY }, { scale }] }}>
           <Svg width="31.42" height="29.54" viewBox="0 0 31.42 29.54">
             <G>
               <Path
@@ -112,14 +116,8 @@ export default class FeedActiveIcon extends Component {
             </G>
           </Svg>
         </Animated.View>
-        {/* <View style={{ position: "absolute", top: -18, left: -25 }}> */}
         <View style={styles.circlePositon}>
-          <Svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
-            // style={{ backgroundColor: "rgba(1, 1, 1, 0.5)" }}
-          >
+          <Svg width="80" height="80" viewBox="0 0 80 80">
             <AnimatedCircle
               cx="40"
               cy="35"

@@ -1,14 +1,7 @@
 /* eslint-disable lines-between-class-members */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  Animated
-} from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 import feedActive from '../svg/feedActive';
 import feedInActive from '../svg/feedInActive';
@@ -42,7 +35,7 @@ class TabItem extends Component {
     const { routeName, isActive, label } = this.props;
     const Geticons = tabBarIcons[isActive ? 'active' : 'inactive'][routeName];
     let ShowLabel;
-    if (label == true) {
+    if (label === true) {
       ShowLabel = routeName;
     }
     // const ShowLabel = routeName[label ? true : false];

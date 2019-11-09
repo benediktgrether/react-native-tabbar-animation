@@ -33,6 +33,7 @@ const bottomTabBar = createBottomTabNavigator(
     }
   },
   {
+    // eslint-disable-next-line react/jsx-props-no-spreading
     tabBarComponent: (props) => <TabBar {...props} />
   }
 );
