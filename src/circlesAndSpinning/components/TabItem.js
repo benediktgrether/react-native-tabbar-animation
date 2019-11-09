@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+/* eslint-disable lines-between-class-members */
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -6,14 +8,14 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Animated
-} from "react-native";
+} from 'react-native';
 
-import feedActive from "../svg/feedActive";
-import feedInActive from "../svg/feedInActive";
-import searchActive from "../svg/searchActive";
-import searchInActive from "../svg/searchInActive";
-import profilActive from "../svg/profilActive";
-import profilInActive from "../svg/profilInActive";
+import feedActive from '../svg/feedActive';
+import feedInActive from '../svg/feedInActive';
+import searchActive from '../svg/searchActive';
+import searchInActive from '../svg/searchInActive';
+import profilActive from '../svg/profilActive';
+import profilInActive from '../svg/profilInActive';
 
 const tabBarIcons = {
   active: {
@@ -38,7 +40,7 @@ class TabItem extends Component {
   };
   render() {
     const { routeName, isActive, label } = this.props;
-    const Geticons = tabBarIcons[isActive ? "active" : "inactive"][routeName];
+    const Geticons = tabBarIcons[isActive ? 'active' : 'inactive'][routeName];
     let ShowLabel;
     if (label == true) {
       ShowLabel = routeName;
@@ -49,7 +51,7 @@ class TabItem extends Component {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.hndPress} style={styles.button}>
-          <View style={{ alignItems: "center" }}>
+          <View style={{ alignItems: 'center' }}>
             <Geticons />
             <Text>{ShowLabel}</Text>
           </View>
@@ -64,13 +66,13 @@ export default TabItem;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-around",
-    alignItems: "center"
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
 
   button: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

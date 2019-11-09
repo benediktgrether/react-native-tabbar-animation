@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+/* eslint-disable react/no-unused-state */
+import React, { Component } from 'react';
 import {
   TouchableWithoutFeedback,
   Animated,
   Easing,
   View,
   StyleSheet
-} from "react-native";
-import { Svg, Path, Circle, G } from "react-native-svg";
+} from 'react-native';
+import { Svg, Path, Circle, G } from 'react-native-svg';
 
 // Make Own Animation Component
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -17,11 +18,11 @@ export default class FeedActiveIcon extends Component {
     super();
     this.state = {
       rotateY: 0,
-      fill: "none",
-      stroke: "#4e4e50"
+      fill: 'none',
+      stroke: '#4e4e50'
     };
 
-    const colorValue = "#25bfa9";
+    const colorValue = '#25bfa9';
 
     let fillColor = false;
 
@@ -29,15 +30,15 @@ export default class FeedActiveIcon extends Component {
     this.radiusValue = new Animated.Value(0);
     this.strokeWidthValue = new Animated.Value(0);
 
-    this.rotateYValue.addListener(rotateY => {
+    this.rotateYValue.addListener((rotateY) => {
       this.setState({ rotateY: rotateY.value });
-      if (rotateY.value >= 0.5 && fillColor == false) {
+      if (rotateY.value >= 0.5 && fillColor === false) {
         // fill Color on True to get the change only one Time
         fillColor = true;
         // this.state.fill to fill the Icon
         this.state.fill = colorValue;
         // this.state.stroke get the new outline color
-        this.state.stroke = "none";
+        this.state.stroke = 'none';
       }
     });
   }
@@ -73,17 +74,17 @@ export default class FeedActiveIcon extends Component {
   render() {
     const rotateY = this.rotateYValue.interpolate({
       inputRange: [0, 1],
-      outputRange: ["0deg", "180deg"]
+      outputRange: ['0deg', '180deg']
     });
 
     const changeRadius = this.radiusValue.interpolate({
       inputRange: [0, 1],
-      outputRange: ["0", "33"]
+      outputRange: ['0', '33']
     });
 
     const changeStrokeWidth = this.strokeWidthValue.interpolate({
       inputRange: [0, 1],
-      outputRange: ["5", "0"]
+      outputRange: ['5', '0']
     });
 
     const { fill, stroke } = this.state;
@@ -136,12 +137,12 @@ export default class FeedActiveIcon extends Component {
 
 const styles = StyleSheet.create({
   circlePositon: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
