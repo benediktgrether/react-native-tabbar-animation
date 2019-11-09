@@ -7,7 +7,8 @@ import SearchScreen from "./../screen/SearchScreen";
 import SettingsScreen from "./../screen/SettingsScreen";
 // import TabBar from "../components/TabBarTesting";
 
-import TabBar from "./../strokeAnimation/components/TabBar";
+// import TabBar from "./../strokeAnimation/components/TabBar";
+import TabBar from "./../sliderWithLabel/components/TabBar";
 
 // import TabBar from "./../circlesAndSpinning/components/TabBar";
 
