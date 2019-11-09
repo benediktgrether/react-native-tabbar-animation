@@ -19,12 +19,16 @@ const tabBarIcons = {
   active: {
     Feed: feedActive,
     Search: searchActive,
-    Settings: profilActive
+    Camera: profilActive,
+    Likes: profilActive,
+    Profil: profilActive
   },
   inactive: {
     Feed: feedInActive,
     Search: searchInActive,
-    Settings: profilInActive
+    Camera: profilInActive,
+    Likes: profilInActive,
+    Profil: profilInActive
   }
 };
 

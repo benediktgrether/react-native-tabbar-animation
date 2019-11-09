@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default class SettingScreen extends Component {
+export default class LikesScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ color: "#fff" }}>Setting Screen</Text>
+        <Text style={{ color: "#fff" }}>Likes Screen</Text>
       </View>
     );
   }

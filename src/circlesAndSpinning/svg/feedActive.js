@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated, Easing, View } from "react-native";
+import {
+  TouchableWithoutFeedback,
+  Animated,
+  Easing,
+  View,
+  StyleSheet
+} from "react-native";
 import { Svg, Path, Circle } from "react-native-svg";
 
 // Make Own Animation Component
@@ -94,7 +100,8 @@ export default class FeedActiveIcon extends Component {
             />
           </Svg>
         </Animated.View>
-        <View style={{ position: "absolute", top: -18, left: -25 }}>
+        {/* <View style={{ position: "absolute", top: -18, left: -25 }}> */}
+        <View style={styles.circlePositon}>
           <Svg
             width="80"
             height="80"
@@ -115,3 +122,15 @@ export default class FeedActiveIcon extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  circlePositon: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});

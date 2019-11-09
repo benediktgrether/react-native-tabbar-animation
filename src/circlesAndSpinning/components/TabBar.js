@@ -15,7 +15,7 @@ class TabBar extends Component {
             key={route.routeName}
             {...route}
             isActive={index === i}
-            label={false}
+            label={true}
           />
         ))}
       </View>
