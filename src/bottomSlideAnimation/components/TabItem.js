@@ -33,14 +33,29 @@ const tabBarIcons = {
     Profil: profilInActive
   }
 };
-// const getTabWidth = Object.keys(tabBarIcons.inactive).length;
-// const { width } = Dimensions.get('window');
-// const tabWidth = width / getTabWidth;
+const getTabWidth = Object.keys(tabBarIcons.inactive).length;
+const { width } = Dimensions.get('window');
+const tabWidth = width / getTabWidth;
 // console.log(tabWidth);
 
 class TabItem extends Component {
   hndPress = () => {
     this.props.navigation.navigate(this.props.routeName);
+    const { value, index } = this.props;
+
+    Animated.spring(value, {
+      // toValue: -width + tabWidth * index,
+      toValue: tabWidth * index + tabWidth / 2 - 5,
+      useNativeDriver: true
+    }).start();
+    console.log(
+      'Calculate the SVG Object',
+      -width + tabWidth * index,
+      'the object',
+      width,
+      tabWidth,
+      index
+    );
   };
 
   render() {

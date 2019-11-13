@@ -15,19 +15,22 @@ const tabWidth = width / 5;
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
 class TabBar extends Component {
-  value = new Animated.Value(0);
+  value = new Animated.Value(tabWidth * 0 + tabWidth / 2 - 5);
   render() {
+    console.log(this.value);
     const { navigation } = this.props;
     const { routes, index } = navigation.state;
     const { value: translateX } = this;
 
     return (
       <>
-        <View {...{ width }}>
+        <View
+          {...{ width }}
+          style={{ justifyContent: 'center', alignItems: 'center' }}>
           <AnimatedSvg
-            width={width * 2.5}
+            width={width}
             height="10"
-            style={{ transform: [{ translateX }] }}>
+            style={(styles.tab, { transform: [{ translateX }] })}>
             <Rect width="10" height="10" />
           </AnimatedSvg>
         </View>
@@ -39,10 +42,11 @@ class TabBar extends Component {
               {...route}
               isActive={index === i}
               label={false}
+              value={translateX}
+              index={i}
               // value={translateX}
             />
           ))}
-          {console.log(index)}
         </View>
       </>
     );
@@ -57,5 +61,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#d6d6d6',
     flexDirection: 'row',
     justifyContent: 'space-around'
+  },
+  tab: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
