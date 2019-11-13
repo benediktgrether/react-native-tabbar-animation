@@ -9,12 +9,12 @@ import CameraScreen from '../screen/CameraScreen';
 import LikesScreen from '../screen/LikesScreen';
 // import TabBar from "../components/TabBarTesting";
 
-// import TabBar from "./../strokeAnimation/components/TabBar";
+// import TabBar from './../strokeAnimation/components/TabBar';
 // import TabBar from "./../sliderWithLabel/components/TabBar";
 
-// import TabBar from '../circlesAndSpinning/components/TabBar';
+import TabBar from '../circlesAndSpinning/components/TabBar';
 
-import TabBar from '../bottomSlideAnimation/components/TabBar';
+// import TabBar from '../bottomSlideAnimation/components/TabBar';
 
 const bottomTabBar = createBottomTabNavigator(
   {

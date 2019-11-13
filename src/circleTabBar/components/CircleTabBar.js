@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 import {
   View,
@@ -6,17 +6,17 @@ import {
   Dimensions,
   StyleSheet,
   Animated
-} from "react-native";
-import { Svg, Path } from "react-native-svg";
-import * as shape from "d3-shape";
+} from 'react-native';
+import { Svg, Path } from 'react-native-svg';
+import * as shape from 'd3-shape';
 
 // import StaticTabbar from "./StaticTabbar";
-import StaticTabbar from "./StaticTabbar";
+import StaticTabbar from './StaticTabbar';
 
-import FeedInActive from "./../svg/feedInActive";
-import GridInActive from "./../svg/gridInActive";
-import SearchInActive from "./../svg/searchInActive";
-import ProfilInActive from "./../svg/profilInActive";
+import FeedInActive from './../svg/feedInActive';
+import GridInActive from './../svg/gridInActive';
+import SearchInActive from './../svg/searchInActive';
+import ProfilInActive from './../svg/profilInActive';
 
 const tabsIcon = [
   { name: <FeedInActive /> },
@@ -44,7 +44,7 @@ const tabsIcon = [
 //   }
 // ];
 
-const { width } = Dimensions.get("window");
+const { width } = Dimensions.get('window');
 const tabWidth = width / tabsIcon.length;
 const height = 64;
 
@@ -53,8 +53,8 @@ const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 //   .curve(shape.curveBasis)
 const left = shape
   .line()
-  .x(d => d.x)
-  .y(d => d.y)([
+  .x((d) => d.x)
+  .y((d) => d.y)([
   // Pass some Data for the Curve Function
   // Draw 3 Curved for left active and right Tab.
   { x: 0, y: 0 },
@@ -63,8 +63,8 @@ const left = shape
 
 const tab = shape
   .line()
-  .x(d => d.x)
-  .y(d => d.y)
+  .x((d) => d.x)
+  .y((d) => d.y)
   .curve(shape.curveBasis)([
   { x: width, y: 0 },
   { x: width + 5, y: 0 },
@@ -78,8 +78,8 @@ const tab = shape
 
 const right = shape
   .line()
-  .x(d => d.x)
-  .y(d => d.y)([
+  .x((d) => d.x)
+  .y((d) => d.y)([
   // Pass some Data for the Curve Function
   // Draw 3 Curved for left active and right Tab.
   { x: width + tabWidth, y: 0 },
@@ -103,8 +103,7 @@ export default class CircleTabBar extends Component {
           <AnimatedSvg
             width={width * 2.5}
             style={{ transform: [{ translateX }] }}
-            {...{ height }}
-          >
+            {...{ height }}>
             <Path {...{ d }} fill="white" />
           </AnimatedSvg>
           <View style={StyleSheet.absoluteFill}>
@@ -120,6 +119,6 @@ export default class CircleTabBar extends Component {
 
 const styles = StyleSheet.create({
   safeArea: {
-    backgroundColor: "white"
+    backgroundColor: 'white'
   }
 });

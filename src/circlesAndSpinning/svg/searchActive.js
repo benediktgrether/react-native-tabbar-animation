@@ -15,15 +15,14 @@ export default class FeedActiveIcon extends Component {
       stroke: '#4e4e50'
     };
 
-    const colorValue = '#25bfa9';
-
-    let fillColor = false;
-
     this.rotateYValue = new Animated.Value(0);
     this.radiusValue = new Animated.Value(0);
     this.strokeWidthValue = new Animated.Value(0);
     this.scaleValue = new Animated.Value(0);
 
+    const colorValue = '#25bfa9';
+
+    let fillColor = false;
     this.rotateYValue.addListener((rotateY) => {
       this.setState({ rotateY: rotateY.value });
       if (rotateY.value >= 0.5 && fillColor === false) {

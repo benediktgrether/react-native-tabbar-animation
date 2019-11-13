@@ -19,25 +19,26 @@ export default class FeedActiveIcon extends Component {
     this.radiusValue = new Animated.Value(0);
     this.strokeWidthValue = new Animated.Value(0);
     this.scaleValue = new Animated.Value(0);
-  }
-
-  componentDidMount() {
-    this.animationCircle();
 
     const colorValue = '#25bfa9';
 
     let fillColor = false;
+    let self = this;
     this.rotateYValue.addListener((rotateY) => {
-      this.setState({ rotateY: rotateY.value });
+      self.setState({ rotateY: rotateY.value });
       if (rotateY.value >= 0.5 && fillColor === false) {
         // fill Color on True to get the change only one Time
         fillColor = true;
         // this.state.fill to fill the Icon
-        this.state.fill = colorValue;
+        self.state.fill = colorValue;
         // this.state.stroke get the new outline color
-        this.state.stroke = 'none';
+        self.state.stroke = 'none';
       }
     });
+  }
+
+  componentDidMount() {
+    this.animationCircle();
   }
 
   animationCircle() {

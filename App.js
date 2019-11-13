@@ -1,10 +1,10 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 console.disableYellowBox = true;
 
-import Routes from "./src/routes/Routes";
+import Routes from './src/routes/Routes';
 
-import CircleTabBar from "./src/circleTabBar/components/CircleTabBar";
+import CircleTabBar from './src/circleTabBar/components/CircleTabBar';
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ea3345",
-    justifyContent: "flex-end"
+    backgroundColor: '#ea3345',
+    justifyContent: 'flex-end'
   }
 });

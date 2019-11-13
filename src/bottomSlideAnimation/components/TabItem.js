@@ -1,7 +1,14 @@
 /* eslint-disable lines-between-class-members */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Dimensions,
+  Animated
+} from 'react-native';
 
 import feedActive from '../svg/feedActive';
 import feedInActive from '../svg/feedInActive';
@@ -26,11 +33,16 @@ const tabBarIcons = {
     Profil: profilInActive
   }
 };
+// const getTabWidth = Object.keys(tabBarIcons.inactive).length;
+// const { width } = Dimensions.get('window');
+// const tabWidth = width / getTabWidth;
+// console.log(tabWidth);
 
 class TabItem extends Component {
   hndPress = () => {
     this.props.navigation.navigate(this.props.routeName);
   };
+
   render() {
     const { routeName, isActive, label } = this.props;
     const Geticons = tabBarIcons[isActive ? 'active' : 'inactive'][routeName];
@@ -41,6 +53,7 @@ class TabItem extends Component {
     // const ShowLabel = routeName[label ? true : false];
     // console.log(ShowLabel);
     // console.log(ShowLabel, label);
+
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.hndPress} style={styles.button}>
