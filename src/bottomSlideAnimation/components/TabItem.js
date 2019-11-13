@@ -48,14 +48,6 @@ class TabItem extends Component {
       toValue: tabWidth * index + tabWidth / 2 - 5,
       useNativeDriver: true
     }).start();
-    console.log(
-      'Calculate the SVG Object',
-      -width + tabWidth * index,
-      'the object',
-      width,
-      tabWidth,
-      index
-    );
   };
 
   render() {
