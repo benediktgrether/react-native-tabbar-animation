@@ -41,9 +41,9 @@ const tabWidth = width / getTabWidth;
 class TabItem extends Component {
   hndPress = () => {
     this.props.navigation.navigate(this.props.routeName);
-    const { value, index } = this.props;
+    const { translateXValue, index } = this.props;
 
-    Animated.spring(value, {
+    Animated.spring(translateXValue, {
       // toValue: -width + tabWidth * index,
       toValue: tabWidth * index + tabWidth / 2 - 5,
       useNativeDriver: true

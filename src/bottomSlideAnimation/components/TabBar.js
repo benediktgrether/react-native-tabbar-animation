@@ -13,14 +13,15 @@ const { width } = Dimensions.get('window');
 const tabWidth = width / 5;
 // Make Animation Svg
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
+const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
 class TabBar extends Component {
-  value = new Animated.Value(tabWidth * 0 + tabWidth / 2 - 5);
+  translateXValue = new Animated.Value(tabWidth * 0 + tabWidth / 2 - 5);
   render() {
-    console.log(this.value);
+    console.log(this.translateXValue);
     const { navigation } = this.props;
     const { routes, index } = navigation.state;
-    const { value: translateX } = this;
+    const { translateXValue: translateX } = this;
 
     return (
       <>
@@ -31,7 +32,7 @@ class TabBar extends Component {
             width={width}
             height="10"
             style={(styles.tab, { transform: [{ translateX }] })}>
-            <Rect width="10" height="10" />
+            <AnimatedRect width="10" height="10" ry="5" />
           </AnimatedSvg>
         </View>
         <View style={styles.container}>
@@ -42,7 +43,7 @@ class TabBar extends Component {
               {...route}
               isActive={index === i}
               label={false}
-              value={translateX}
+              translateXValue={translateX}
               index={i}
               // value={translateX}
             />
