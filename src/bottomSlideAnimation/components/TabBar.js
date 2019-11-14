@@ -2,7 +2,13 @@
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions, Animated } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  Animated,
+  TouchableWithoutFeedback
+} from 'react-native';
 import { Svg, Path, Rect } from 'react-native-svg';
 
 import TabItem from './TabItem';
@@ -17,11 +23,12 @@ const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
 class TabBar extends Component {
   translateXValue = new Animated.Value(tabWidth * 0 + tabWidth / 2 - 5);
+  translateWidthValue = new Animated.Value(10);
   render() {
-    console.log(this.translateXValue);
     const { navigation } = this.props;
     const { routes, index } = navigation.state;
     const { translateXValue: translateX } = this;
+    const { translateWidthValue: widthValue } = this;
 
     return (
       <>
@@ -32,19 +39,26 @@ class TabBar extends Component {
             width={width}
             height="10"
             style={(styles.tab, { transform: [{ translateX }] })}>
-            <AnimatedRect width="10" height="10" ry="5" />
+            <AnimatedRect
+              width={widthValue}
+              height="10"
+              ry="5"
+              fill="#25bfa9"
+            />
           </AnimatedSvg>
         </View>
         <View style={styles.container}>
-          {routes.map((route, i) => (
+          {routes.map((route, key) => (
             <TabItem
               navigation={navigation}
               key={route.routeName}
               {...route}
-              isActive={index === i}
+              isActive={index === key}
               label={false}
               translateXValue={translateX}
-              index={i}
+              index={key}
+              translateWidthValue={widthValue}
+
               // value={translateX}
             />
           ))}

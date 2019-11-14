@@ -41,13 +41,27 @@ const tabWidth = width / getTabWidth;
 class TabItem extends Component {
   hndPress = () => {
     this.props.navigation.navigate(this.props.routeName);
-    const { translateXValue, index } = this.props;
+    const { translateXValue, index, translateWidthValue } = this.props;
 
-    Animated.spring(translateXValue, {
-      // toValue: -width + tabWidth * index,
-      toValue: tabWidth * index + tabWidth / 2 - 5,
-      useNativeDriver: true
-    }).start();
+    if (index !== this.index)
+      Animated.parallel([
+        Animated.spring(translateXValue, {
+          toValue: tabWidth * index + tabWidth / 2 - 5,
+          useNativeDriver: true
+        }),
+        Animated.sequence([
+          Animated.timing(translateWidthValue, {
+            toValue: 40,
+            duration: 100,
+            useNativeDriver: true
+          }),
+          Animated.timing(translateWidthValue, {
+            toValue: 10,
+            duration: 100,
+            useNativeDriver: true
+          })
+        ])
+      ]).start();
   };
 
   render() {
