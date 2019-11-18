@@ -13,7 +13,8 @@ import LikesScreen from '../screen/LikesScreen';
 
 // import TabBar from '../circlesAndSpinning/components/TabBar';
 
-import TabBar from '../bottomSlideAnimation/components/TabBar';
+// import TabBar from '../bottomSlideAnimation/components/TabBar';
+import TabBar from '../movingUp/components/TabBar';
 
 const bottomTabBar = createBottomTabNavigator(
   {
