@@ -7,8 +7,8 @@ import { Svg, Path, Circle } from 'react-native-svg';
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 export default class SearchActiveIcon extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       fill: 'none',
       scale: 1,

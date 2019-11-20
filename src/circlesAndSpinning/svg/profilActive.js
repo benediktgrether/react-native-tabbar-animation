@@ -7,8 +7,8 @@ import { Svg, Path, Circle, G } from 'react-native-svg';
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 export default class FeedActiveIcon extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       rotateY: 0,
       fill: 'none',

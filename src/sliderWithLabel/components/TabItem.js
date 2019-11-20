@@ -33,8 +33,8 @@ const tabBarIcons = {
 let widthValue = 0;
 
 class TabItem extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.translationXValue = new Animated.Value(0);
   }
 
