@@ -76,6 +76,8 @@ export default class FeedActiveIcon extends Component {
             strokeDasharray="150"
             strokeDashoffset={offset}
             strokeWidth="3"
+            origin={(31.64 / 2, 29.69 / 2)}
+            scale={0.85}
           />
         </Svg>
       </Animated.View>

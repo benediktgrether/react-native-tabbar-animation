@@ -30,9 +30,10 @@ export default TabBar;
 
 const styles = StyleSheet.create({
   container: {
-    height: 80,
-    backgroundColor: '#d6d6d6',
+    height: 46,
+    // backgroundColor: '#d6d6d6',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderTopWidth: StyleSheet.hairlineWidth
   }
 });

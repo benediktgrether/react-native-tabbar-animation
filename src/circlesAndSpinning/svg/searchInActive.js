@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { TouchableWithoutFeedback, Animated } from "react-native";
-import { Svg, Path } from "react-native-svg";
+import React, { Component } from 'react';
+import { TouchableWithoutFeedback, Animated } from 'react-native';
+import { Svg, Path } from 'react-native-svg';
 
 export default class SearchInActiveIcon extends Component {
   render() {
@@ -13,6 +13,8 @@ export default class SearchInActiveIcon extends Component {
           stroke="#4e4e50"
           stroke-miterlimit="10"
           strokeWidth="3"
+          origin={(29.17 / 2, 29.09 / 2)}
+          scale={0.85}
         />
       </Svg>
     );

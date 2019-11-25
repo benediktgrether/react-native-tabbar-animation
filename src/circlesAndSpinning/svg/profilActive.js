@@ -83,7 +83,7 @@ export default class FeedActiveIcon extends Component {
 
     const changeRadius = this.radiusValue.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0', '33']
+      outputRange: ['0', '22']
     });
 
     const changeStrokeWidth = this.strokeWidthValue.interpolate({
@@ -104,6 +104,8 @@ export default class FeedActiveIcon extends Component {
                 stroke={stroke}
                 stroke-miterlimit="10"
                 strokeWidth="3"
+                origin={(31.42 / 2, 29.54 / 2)}
+                scale={0.85}
               />
               <Path
                 d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
@@ -112,15 +114,17 @@ export default class FeedActiveIcon extends Component {
                 stroke={stroke}
                 stroke-miterlimit="10"
                 strokeWidth="3"
+                origin={(31.42 / 2, 29.54 / 2)}
+                scale={0.85}
               />
             </G>
           </Svg>
         </Animated.View>
         <View style={styles.circlePositon}>
-          <Svg width="80" height="80" viewBox="0 0 80 80">
+          <Svg width="60" height="60" viewBox="0 0 60 60">
             <AnimatedCircle
-              cx="40"
-              cy="35"
+              cx="30"
+              cy="30"
               r={changeRadius}
               fill="none"
               stroke="#25bfa9"

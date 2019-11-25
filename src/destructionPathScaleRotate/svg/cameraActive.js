@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import { Animated, Easing, View, StyleSheet } from 'react-native';
-import { Svg, Path, Circle, G } from 'react-native-svg';
+import { Animated, Easing, View, StyleSheet, Alert } from 'react-native';
+import { Svg, Path, Rect } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-export default class FeedActiveIcon extends Component {
+export default class CameraActiveIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,38 +62,23 @@ export default class FeedActiveIcon extends Component {
   render() {
     const offset = this.offsetValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, 95]
+      outputRange: [0, 150]
     });
     const { fill, scale, rotate } = this.state;
     return (
       <Animated.View style={{ transform: [{ scale }, { rotate }] }}>
-        <Svg width="31.42" height="29.54" viewBox="0 0 31.42 29.54">
-          <G>
-            <AnimatedPath
-              d="M24,9.76a7.9,7.9,0,0,1-1.63,4.83A8,8,0,1,1,24,9.76Z"
-              transform="translate(-0.29 -0.23)"
-              fill={fill}
-              stroke="#f35463"
-              strokeDasharray="95"
-              strokeDashoffset={offset}
-              stroke-miterlimit="10"
-              strokeWidth="3"
-              origin={(31.42 / 2, 29.54 / 2)}
-              scale={0.85}
-            />
-            <AnimatedPath
-              d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
-              transform="translate(-0.29 -0.23)"
-              fill={fill}
-              stroke="#f35463"
-              strokeDasharray="95"
-              strokeDashoffset={offset}
-              stroke-miterlimit="10"
-              strokeWidth="3"
-              origin={(31.42 / 2, 29.54 / 2)}
-              scale={0.85}
-            />
-          </G>
+        <Svg width="29.14" height="29.14" viewBox="0 0 29.14 29.14">
+          <AnimatedPath
+            d="M20.84,1.84H11.16a8.24,8.24,0,0,0-8.23,8.23v9.68A8.24,8.24,0,0,0,11.16,28h9.68a8.24,8.24,0,0,0,8.23-8.23V10.07A8.24,8.24,0,0,0,20.84,1.84ZM22,15.46H16.55V20.9h-1.1V15.46H10v-1.1h5.44V8.92h1.1v5.44H22Z"
+            transform="translate(-1.43 -0.34)"
+            fill={fill}
+            stroke="#f35463"
+            strokeDasharray="150"
+            strokeDashoffset={offset}
+            strokeWidth="3"
+            origin={(29.14 / 2, 29.14 / 2)}
+            scale={0.85}
+          />
         </Svg>
       </Animated.View>
     );

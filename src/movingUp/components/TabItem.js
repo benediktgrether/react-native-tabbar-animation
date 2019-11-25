@@ -16,20 +16,24 @@ import searchActive from '../svg/searchActive';
 import searchInActive from '../svg/searchInActive';
 import profilActive from '../svg/profilActive';
 import profilInActive from '../svg/profilInActive';
+import cameraActive from '../svg/cameraActive';
+import cameraInActive from '../svg/cameraInActive';
+import likesActive from '../svg/likesActive';
+import likesInActive from '../svg/likesInActive';
 
 const tabBarIcons = {
   active: {
     Feed: feedActive,
     Search: searchActive,
-    Camera: profilActive,
-    Likes: profilActive,
+    Camera: cameraActive,
+    Likes: likesActive,
     Profil: profilActive
   },
   inactive: {
     Feed: feedInActive,
     Search: searchInActive,
-    Camera: profilInActive,
-    Likes: profilInActive,
+    Camera: cameraInActive,
+    Likes: likesInActive,
     Profil: profilInActive
   }
 };
@@ -97,7 +101,7 @@ class TabItem extends Component {
     // Value for the Tab Icon
     const translateYIcon = this.translateYIconValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, -40]
+      outputRange: [-12, -40]
     });
 
     // Value Opacity for the Gray Box
@@ -137,7 +141,7 @@ class TabItem extends Component {
             style={
               isActive === true
                 ? { transform: [{ translateY: translateYIcon }] }
-                : null
+                : { paddingTop: 12 }
             }>
             <Geticons />
             <Text>{ShowLabel}</Text>

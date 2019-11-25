@@ -34,7 +34,12 @@ class TabBar extends Component {
       <>
         <View
           {...{ width }}
-          style={{ justifyContent: 'center', alignItems: 'center' }}>
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingTop: 5,
+            borderTopWidth: StyleSheet.hairlineWidth
+          }}>
           <AnimatedSvg
             width={width}
             height="10"
@@ -72,10 +77,11 @@ export default TabBar;
 
 const styles = StyleSheet.create({
   container: {
-    height: 80,
-    backgroundColor: '#d6d6d6',
+    height: 60,
+    // backgroundColor: '#d6d6d6',
     flexDirection: 'row',
     justifyContent: 'space-around'
+    // borderTopWidth: StyleSheet.hairlineWidth
   },
   tab: {
     flex: 1,

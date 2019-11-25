@@ -37,6 +37,8 @@ export default class SearchInActiveIcon extends Component {
           strokeDashoffset={offset}
           stroke-miterlimit="10"
           strokeWidth="3"
+          origin={(29.17 / 2, 29.09 / 2)}
+          scale={0.85}
         />
       </Svg>
     );

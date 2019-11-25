@@ -14,6 +14,8 @@ export default class FeedActiveIcon extends Component {
             fill="none"
             stroke="#25bfa9"
             strokeWidth="3"
+            origin={(29.17 / 2, 29.09 / 2)}
+            scale={0.85}
           />
         </Svg>
       </View>

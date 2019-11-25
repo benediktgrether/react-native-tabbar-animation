@@ -13,6 +13,8 @@ export default class FeedInActiveIcon extends Component {
           fill="none"
           stroke="#4e4e50"
           strokeWidth="3"
+          origin={(31.64 / 2, 29.69 / 2)}
+          scale={0.85}
         />
       </Svg>
       // </TouchableWithoutFeedback>

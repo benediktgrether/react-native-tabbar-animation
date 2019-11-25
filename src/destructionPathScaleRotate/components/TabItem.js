@@ -12,22 +12,26 @@ import feedActive from '../svg/feedActive';
 import feedInActive from '../svg/feedInActive';
 import searchActive from '../svg/searchActive';
 import searchInActive from '../svg/searchInActive';
+import likesActive from '../svg/likesActive';
+import likesInActive from '../svg/likesInActive';
 import profilActive from '../svg/profilActive';
 import profilInActive from '../svg/profilInActive';
+import cameraActive from '../svg/cameraActive';
+import cameraInActive from '../svg/cameraInActive';
 
 const tabBarIcons = {
   active: {
     Feed: feedActive,
     Search: searchActive,
-    Camera: profilActive,
-    Likes: profilActive,
+    Camera: cameraActive,
+    Likes: likesActive,
     Profil: profilActive
   },
   inactive: {
     Feed: feedInActive,
     Search: searchInActive,
-    Camera: profilInActive,
-    Likes: profilInActive,
+    Camera: cameraInActive,
+    Likes: likesInActive,
     Profil: profilInActive
   }
 };
@@ -49,7 +53,7 @@ class TabItem extends Component {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.hndPress} style={styles.button}>
-          <View style={{ alignItems: 'center' }}>
+          <View style={{ alignItems: 'center', paddingTop: 12 }}>
             <Geticons />
             <Text>{ShowLabel}</Text>
           </View>

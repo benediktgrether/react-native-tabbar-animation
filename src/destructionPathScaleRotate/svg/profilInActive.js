@@ -38,6 +38,8 @@ export default class ProfilInActiveIcon extends Component {
             strokeDashoffset={offset}
             stroke-miterlimit="10"
             strokeWidth="3"
+            origin={(31.42 / 2, 29.54 / 2)}
+            scale={0.85}
           />
           <AnimatedPath
             d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
@@ -48,6 +50,8 @@ export default class ProfilInActiveIcon extends Component {
             strokeDashoffset={offset}
             stroke-miterlimit="10"
             strokeWidth="3"
+            origin={(31.42 / 2, 29.54 / 2)}
+            scale={0.85}
           />
         </G>
       </Svg>

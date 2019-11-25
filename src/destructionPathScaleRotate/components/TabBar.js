@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import TabItem from './TabItem';
 
@@ -10,10 +10,11 @@ class TabBar extends Component {
     return (
       <View
         style={{
-          height: 80,
+          height: 46,
           //    backgroundColor: "red",
           flexDirection: 'row',
-          justifyContent: 'space-around'
+          justifyContent: 'space-around',
+          borderTopWidth: StyleSheet.hairlineWidth
         }}>
         {routes.map((route, i) => (
           <TabItem

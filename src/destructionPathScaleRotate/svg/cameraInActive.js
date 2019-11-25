@@ -4,7 +4,7 @@ import { Svg, Path } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-export default class FeedInActiveIcon extends Component {
+export default class CameraInActiveIcon extends Component {
   constructor(props) {
     super(props);
     this.offsetValue = new Animated.Value(0);
@@ -29,16 +29,18 @@ export default class FeedInActiveIcon extends Component {
     });
     return (
       // <TouchableWithoutFeedback onPress={this.hndPress}>
-      <Svg width="31.64" height="29.69" viewBox="0 0 31.64 29.69">
+      <Svg width="29.14" height="29.14" viewBox="0 0 29.14 29.14">
         <AnimatedPath
-          d="M30.32,16.64v9.72a2,2,0,0,1-2,2H20.57a2,2,0,0,1-2-2V20.5a2.61,2.61,0,1,0-5.21,0v5.86a2,2,0,0,1-2,2H3.65a2,2,0,0,1-2-2V16.64a3.3,3.3,0,0,1,1-2.33L14.7,2.19A1.83,1.83,0,0,1,16,1.65a1.79,1.79,0,0,1,1.29.54L29.36,14.31A3.3,3.3,0,0,1,30.32,16.64Z"
-          transform="translate(-0.18 -0.15)"
+          d="M20.84,1.84H11.16a8.24,8.24,0,0,0-8.23,8.23v9.68A8.24,8.24,0,0,0,11.16,28h9.68a8.24,8.24,0,0,0,8.23-8.23V10.07A8.24,8.24,0,0,0,20.84,1.84ZM22,15.46H16.55V20.9h-1.1V15.46H10v-1.1h5.44V8.92h1.1v5.44H22Z"
+          transform="translate(-1.43 -0.34)"
           fill="none"
           stroke="#4e4e50"
           strokeDasharray="150"
           strokeDashoffset={offset}
           strokeWidth="3"
-          origin={(31.64 / 2, 29.69 / 2)}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          origin={(29.14 / 2, 29.14 / 2)}
           scale={0.85}
         />
       </Svg>

@@ -77,6 +77,8 @@ export default class SearchActiveIcon extends Component {
             strokeDasharray="125"
             strokeDashoffset={offset}
             strokeWidth="3"
+            origin={(29.17 / 2, 29.09 / 2)}
+            scale={0.85}
           />
         </Svg>
       </Animated.View>
