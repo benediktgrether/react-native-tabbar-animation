@@ -48,7 +48,8 @@ class TabBar extends Component {
               width={widthValue}
               height="10"
               ry="5"
-              fill="#25bfa9"
+              // fill="#25bfa9"
+              fill="#313131"
             />
           </AnimatedSvg>
         </View>

@@ -12,7 +12,8 @@ export default class LikesActiveIcon extends Component {
     this.state = {
       rotateY: 0,
       fill: 'none',
-      stroke: '#4e4e50'
+      // stroke: '#4e4e50'
+      stroke: '#313131'
     };
 
     this.rotateYValue = new Animated.Value(0);
@@ -20,7 +21,8 @@ export default class LikesActiveIcon extends Component {
     this.strokeWidthValue = new Animated.Value(0);
     this.scaleValue = new Animated.Value(0);
 
-    const colorValue = '#25bfa9';
+    // const colorValue = '#25bfa9';
+    const colorValue = '#313131';
 
     let fillColor = false;
     let self = this;
@@ -114,7 +116,8 @@ export default class LikesActiveIcon extends Component {
               cy="30"
               r={changeRadius}
               fill="none"
-              stroke="#25bfa9"
+              // stroke="#25bfa9"
+              stroke="#313131"
               strokeWidth={changeStrokeWidth}
             />
           </Svg>

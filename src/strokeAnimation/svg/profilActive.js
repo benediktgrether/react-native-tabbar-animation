@@ -36,7 +36,7 @@ export default class FeedActiveIcon extends Component {
             d="M24,9.76a7.9,7.9,0,0,1-1.63,4.83A8,8,0,1,1,24,9.76Z"
             transform="translate(-0.29 -0.23)"
             fill="none"
-            stroke="#4e4e50"
+            stroke="#313131"
             stroke-miterlimit="10"
             strokeWidth="3"
             origin={(31.42 / 2, 29.54 / 2)}
@@ -46,7 +46,7 @@ export default class FeedActiveIcon extends Component {
             d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
             transform="translate(-0.29 -0.23)"
             fill="none"
-            stroke="#4e4e50"
+            stroke="#313131"
             stroke-miterlimit="10"
             strokeWidth="3"
             origin={(31.42 / 2, 29.54 / 2)}
@@ -58,7 +58,7 @@ export default class FeedActiveIcon extends Component {
             d="M24,9.76a7.9,7.9,0,0,1-1.63,4.83A8,8,0,1,1,24,9.76Z"
             transform="translate(-0.29 -0.23)"
             fill="none"
-            stroke="#25bfa9"
+            stroke="#405DE6"
             strokeDasharray="95"
             strokeDashoffset={offset}
             stroke-miterlimit="10"
@@ -70,7 +70,7 @@ export default class FeedActiveIcon extends Component {
             d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
             transform="translate(-0.29 -0.23)"
             fill="none"
-            stroke="#25bfa9"
+            stroke="#405DE6"
             strokeDasharray="95"
             strokeDashoffset={offset}
             stroke-miterlimit="10"

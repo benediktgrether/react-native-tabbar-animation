@@ -33,7 +33,8 @@ export default class FeedActiveIcon extends Component {
   }
   animationActive() {
     this.setState({
-      fill: '#f35463',
+      // fill: '#f35463',
+      fill: '#313131',
       scale: this.scaleValue.interpolate({
         inputRange: [0, 1, 2],
         outputRange: [0, 1.25, 1]
@@ -73,7 +74,8 @@ export default class FeedActiveIcon extends Component {
               d="M24,9.76a7.9,7.9,0,0,1-1.63,4.83A8,8,0,1,1,24,9.76Z"
               transform="translate(-0.29 -0.23)"
               fill={fill}
-              stroke="#f35463"
+              // stroke="#f35463"
+              stroke="#313131"
               strokeDasharray="95"
               strokeDashoffset={offset}
               stroke-miterlimit="10"
@@ -85,7 +87,8 @@ export default class FeedActiveIcon extends Component {
               d="M30.21,26.58V27.7a.57.57,0,0,1-.6.57H2.38a.56.56,0,0,1-.59-.57V26.58A7.57,7.57,0,0,1,9.36,19H22.63A7.57,7.57,0,0,1,30.21,26.58Z"
               transform="translate(-0.29 -0.23)"
               fill={fill}
-              stroke="#f35463"
+              // stroke="#f35463"
+              stroke="#313131"
               strokeDasharray="95"
               strokeDashoffset={offset}
               stroke-miterlimit="10"
