@@ -3,18 +3,18 @@ import { SafeAreaView } from 'react-native';
 
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-// import FeedScreen from '../screen/FeedScreen';
-// import SearchScreen from '../screen/SearchScreen';
-// import ProfilScreen from '../screen/ProfilScreen';
-// import CameraScreen from '../screen/CameraScreen';
-// import LikesScreen from '../screen/LikesScreen';
+import FeedScreen from '../screen/FeedScreen';
+import SearchScreen from '../screen/SearchScreen';
+import ProfilScreen from '../screen/ProfilScreen';
+import CameraScreen from '../screen/CameraScreen';
+import LikesScreen from '../screen/LikesScreen';
 
 // Import Test Screens
-import FeedScreen from '../components/Home';
-import SearchScreen from '../components/Search';
-import CameraScreen from '../components/AddPicture';
-import LikesScreen from '../components/Notifications';
-import ProfilScreen from '../components/Profil';
+// import FeedScreen from '../components/Home';
+// import SearchScreen from '../components/Search';
+// import CameraScreen from '../components/AddPicture';
+// import LikesScreen from '../components/Notifications';
+// import ProfilScreen from '../components/Profil';
 // import TabBar from './../sliderWithLabel/components/TabBar';
 
 // import TabBar from './../strokeAnimation/components/TabBar';
