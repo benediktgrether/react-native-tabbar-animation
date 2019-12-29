@@ -10,12 +10,12 @@ export default class FeedActiveIcon extends Component {
     this.offsetValue = new Animated.Value(0);
   }
 
-  componentDidMount() {
-    this.offset();
-  }
+  // componentDidMount() {
+  //   this.offset();
+  // }
 
   offset() {
-    this.offsetValue.setValue(0);
+    // this.offsetValue.setValue(0);
     Animated.timing(this.offsetValue, {
       toValue: 1,
       duration: 400,

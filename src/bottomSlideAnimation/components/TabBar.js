@@ -22,7 +22,7 @@ const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
 class TabBar extends Component {
-  translateXValue = new Animated.Value(tabWidth * 0 + tabWidth / 2 - 5);
+  translateXValue = new Animated.Value(tabWidth / 2 - 5);
   translateWidthValue = new Animated.Value(10);
   render() {
     const { navigation } = this.props;

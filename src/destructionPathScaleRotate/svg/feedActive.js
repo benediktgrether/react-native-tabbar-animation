@@ -6,8 +6,8 @@ import { Svg, Path, Rect } from 'react-native-svg';
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 export default class FeedActiveIcon extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       fill: 'none',
       scale: 1,
@@ -45,9 +45,9 @@ export default class FeedActiveIcon extends Component {
       })
     });
     Animated.parallel([
-      Animated.spring(this.scaleValue, {
+      Animated.timing(this.scaleValue, {
         toValue: 2,
-        // duration: 200,
+        duration: 200,
         useNativeDriver: true
       }),
       Animated.timing(this.rotateValue, {

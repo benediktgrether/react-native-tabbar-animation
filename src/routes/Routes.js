@@ -19,9 +19,9 @@ import LikesScreen from '../screen/LikesScreen';
 
 // import TabBar from './../strokeAnimation/components/TabBar';
 // import TabBar from '../circlesAndSpinning/components/TabBar';
-// import TabBar from '../bottomSlideAnimation/components/TabBar';
+import TabBar from '../bottomSlideAnimation/components/TabBar';
 // import TabBar from '../movingUp/components/TabBar';
-import TabBar from '../destructionPathScaleRotate/components/TabBar';
+// import TabBar from '../destructionPathScaleRotate/components/TabBar';
 
 const bottomTabBar = createBottomTabNavigator(
   {
@@ -42,7 +42,7 @@ const bottomTabBar = createBottomTabNavigator(
     }
   },
   {
-    // eslint-disable-next-line react/jsx-props-no-spreading
+    // Routes.js
     tabBarComponent: (props) => (
       <>
         <TabBar {...props} />
