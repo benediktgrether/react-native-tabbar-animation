@@ -27,19 +27,11 @@ class TabBar extends Component {
   render() {
     const { navigation } = this.props;
     const { routes, index } = navigation.state;
-    const { translateXValue: translateX } = this;
-    const { translateWidthValue: widthValue } = this;
-
+    const translateX = this.translateXValue;
+    const widthValue = this.translateWidthValue;
     return (
       <>
-        <View
-          {...{ width }}
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingTop: 5,
-            borderTopWidth: StyleSheet.hairlineWidth
-          }}>
+        <View {...{ width }} style={styles.tabContainer}>
           <AnimatedSvg
             width={width}
             height="10"
@@ -48,7 +40,6 @@ class TabBar extends Component {
               width={widthValue}
               height="10"
               ry="5"
-              // fill="#25bfa9"
               fill="#313131"
             />
           </AnimatedSvg>
@@ -64,8 +55,7 @@ class TabBar extends Component {
               translateXValue={translateX}
               index={key}
               translateWidthValue={widthValue}
-
-              // value={translateX}
+              tabWidth={tabWidth}
             />
           ))}
         </View>
@@ -77,6 +67,12 @@ class TabBar extends Component {
 export default TabBar;
 
 const styles = StyleSheet.create({
+  tabContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 5,
+    borderTopWidth: StyleSheet.hairlineWidth
+  },
   container: {
     height: 60,
     // backgroundColor: '#d6d6d6',

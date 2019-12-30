@@ -37,35 +37,34 @@ const tabBarIcons = {
     Profil: profilInActive
   }
 };
-const getTabWidth = Object.keys(tabBarIcons.inactive).length;
-const { width } = Dimensions.get('window');
-const tabWidth = width / getTabWidth;
-// console.log(tabWidth);
 
 class TabItem extends Component {
   hndPress = () => {
     this.props.navigation.navigate(this.props.routeName);
-    const { translateXValue, index, translateWidthValue } = this.props;
-
-    if (index !== this.index)
-      Animated.parallel([
-        Animated.spring(translateXValue, {
-          toValue: tabWidth * index + tabWidth / 2 - 5,
+    const {
+      translateXValue,
+      index,
+      translateWidthValue,
+      tabWidth
+    } = this.props;
+    Animated.parallel([
+      Animated.spring(translateXValue, {
+        toValue: tabWidth * index + tabWidth / 2 - 5,
+        useNativeDriver: true
+      }),
+      Animated.sequence([
+        Animated.timing(translateWidthValue, {
+          toValue: 40,
+          duration: 100,
           useNativeDriver: true
         }),
-        Animated.sequence([
-          Animated.timing(translateWidthValue, {
-            toValue: 40,
-            duration: 100,
-            useNativeDriver: true
-          }),
-          Animated.timing(translateWidthValue, {
-            toValue: 10,
-            duration: 100,
-            useNativeDriver: true
-          })
-        ])
-      ]).start();
+        Animated.timing(translateWidthValue, {
+          toValue: 10,
+          duration: 100,
+          useNativeDriver: true
+        })
+      ])
+    ]).start();
   };
 
   render() {
