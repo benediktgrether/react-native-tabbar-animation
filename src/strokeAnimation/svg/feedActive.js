@@ -46,7 +46,7 @@ export default class FeedActiveIcon extends Component {
           transform="translate(-0.18 -0.15)"
           fill="none"
           // stroke="#25bfa9"
-          stroke="#405DE6"
+          stroke="#f35464"
           strokeDasharray="150"
           strokeDashoffset={offset}
           // stroke-miterlimit="10"

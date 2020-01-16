@@ -47,7 +47,7 @@ export default class FeedActiveIcon extends Component {
     Animated.parallel([
       Animated.timing(this.scaleValue, {
         toValue: 2,
-        duration: 200,
+        // duration: 200,
         useNativeDriver: true
       }),
       Animated.timing(this.rotateValue, {
