@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, Animated } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
 export default class SearchInActiveIcon extends Component {

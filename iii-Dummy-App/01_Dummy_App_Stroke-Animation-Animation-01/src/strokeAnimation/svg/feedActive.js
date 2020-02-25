@@ -31,7 +31,6 @@ export default class FeedActiveIcon extends Component {
           transform="translate(-0.18 -0.15)"
           fill="none"
           stroke="#313131"
-          // stroke="#878787"
           strokeWidth="3"
           origin={(31.64 / 2, 29.69 / 2)}
           scale={0.85}

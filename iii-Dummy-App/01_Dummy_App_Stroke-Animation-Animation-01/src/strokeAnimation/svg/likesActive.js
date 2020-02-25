@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, Animated, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
@@ -47,7 +47,6 @@ export default class LikesActiveIcon extends Component {
           stroke="#405DE6"
           strokeDasharray="90"
           strokeDashoffset={offset}
-          // stroke-miterlimit="10"
           strokeWidth="3"
           origin={(31.66 / 2, 27.74 / 2)}
           scale={0.85}

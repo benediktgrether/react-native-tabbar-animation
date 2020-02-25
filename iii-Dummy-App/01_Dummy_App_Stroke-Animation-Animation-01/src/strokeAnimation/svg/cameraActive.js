@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, Animated, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
@@ -44,12 +44,9 @@ export default class CameraActiveIcon extends Component {
           d="M20.84,1.84H11.16a8.24,8.24,0,0,0-8.23,8.23v9.68A8.24,8.24,0,0,0,11.16,28h9.68a8.24,8.24,0,0,0,8.23-8.23V10.07A8.24,8.24,0,0,0,20.84,1.84ZM22,15.46H16.55V20.9h-1.1V15.46H10v-1.1h5.44V8.92h1.1v5.44H22Z"
           transform="translate(-1.43 -0.34)"
           fill="none"
-          // stroke="#25bfa9"
-          // stroke="#f35463"
           stroke="#405DE6"
           strokeDasharray="150"
           strokeDashoffset={offset}
-          // stroke-miterlimit="10"
           strokeWidth="3"
           origin={(29.14 / 2, 29.14 / 2)}
           scale={0.85}

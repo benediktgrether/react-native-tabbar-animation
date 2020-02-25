@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, Animated, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import { Svg, Path, G } from 'react-native-svg';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);

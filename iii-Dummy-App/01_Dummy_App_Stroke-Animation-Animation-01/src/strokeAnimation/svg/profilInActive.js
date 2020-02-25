@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, Animated } from 'react-native';
 import { Svg, Path, G } from 'react-native-svg';
 
 export default class ProfilInActiveIcon extends Component {
