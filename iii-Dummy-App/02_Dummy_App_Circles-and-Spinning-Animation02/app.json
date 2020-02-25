@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Circles and Spinning- Animation 2 - Tab-Bar-Animation",
-    "slug": "CirclesAndSpinningAnimation2TabBarAnimation",
+    "name": "Dummy App 02 - Circles and Spinning- Animation 2 - Tab-Bar-Animation",
+    "slug": "DummyApp02CirclesAndSpinningAnimation2TabBarAnimation",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
