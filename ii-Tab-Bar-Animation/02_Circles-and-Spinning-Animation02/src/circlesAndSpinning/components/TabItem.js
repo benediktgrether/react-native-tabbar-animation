@@ -1,5 +1,3 @@
-/* eslint-disable lines-between-class-members */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
@@ -42,9 +40,6 @@ class TabItem extends Component {
     if (label === true) {
       ShowLabel = routeName;
     }
-    // const ShowLabel = routeName[label ? true : false];
-    // console.log(ShowLabel);
-    // console.log(ShowLabel, label);
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.hndPress} style={styles.button}>

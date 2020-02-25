@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-boolean-value */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 

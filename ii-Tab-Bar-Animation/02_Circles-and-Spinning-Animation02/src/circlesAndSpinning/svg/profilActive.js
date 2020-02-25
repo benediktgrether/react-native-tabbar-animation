@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import { Animated, Easing, View, StyleSheet } from 'react-native';
 import { Svg, Path, Circle, G } from 'react-native-svg';
@@ -12,11 +11,9 @@ export default class FeedActiveIcon extends Component {
     this.state = {
       rotateY: 0,
       fill: 'none',
-      // stroke: '#4e4e50'
       stroke: '#313131'
     };
 
-    // const colorValue = '#25bfa9';
     const colorValue = '#313131';
 
     let fillColor = false;
@@ -61,7 +58,6 @@ export default class FeedActiveIcon extends Component {
         toValue: 1,
         delay: 100,
         duration: 400,
-        // easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       }),
       Animated.timing(this.scaleValue, {
@@ -129,7 +125,6 @@ export default class FeedActiveIcon extends Component {
               cy="30"
               r={changeRadius}
               fill="none"
-              // stroke="#25bfa9"
               stroke="#313131"
               strokeWidth={changeStrokeWidth}
             />

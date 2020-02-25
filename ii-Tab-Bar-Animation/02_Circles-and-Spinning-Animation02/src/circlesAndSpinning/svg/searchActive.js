@@ -12,7 +12,6 @@ export default class FeedActiveIcon extends Component {
     this.state = {
       rotateY: 0,
       fill: 'none',
-      // stroke: '#4e4e50'
       stroke: '#313131'
     };
 
@@ -21,7 +20,6 @@ export default class FeedActiveIcon extends Component {
     this.strokeWidthValue = new Animated.Value(0);
     this.scaleValue = new Animated.Value(0);
 
-    // const colorValue = '#25bfa9';
     const colorValue = '#313131';
 
     let fillColor = false;
@@ -60,7 +58,6 @@ export default class FeedActiveIcon extends Component {
         toValue: 1,
         delay: 100,
         duration: 400,
-        // easing: Easing.inOut(Easing.quad),
         useNativeDriver: true
       }),
       Animated.timing(this.scaleValue, {
@@ -115,7 +112,6 @@ export default class FeedActiveIcon extends Component {
               cy="30"
               r={changeRadius}
               fill="none"
-              // stroke="#25bfa9"
               stroke="#313131"
               strokeWidth={changeStrokeWidth}
             />
