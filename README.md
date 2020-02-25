@@ -9,10 +9,16 @@ Work from my Gradiation for my Bachelor of Scienece
 2. ``` npm install expo-cli --global ```
 
 2. Change in File directory
-3. Starting Expo 
+
+3. ```npm install``` 
+
+4. Starting Expo 
 ```
- $ expo start --ios
+ $ expo start
 ```
+
+Please visit to get started with Expo  
+[get-started](https://docs.expo.io/versions/v36.0.0/get-started/installation/) 
 
 
 ## Githup Pages for all Animations
