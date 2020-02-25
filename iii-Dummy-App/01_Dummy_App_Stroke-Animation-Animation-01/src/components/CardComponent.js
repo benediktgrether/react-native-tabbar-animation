@@ -15,25 +15,25 @@ import {
 class CardComponent extends Component {
   render() {
     const images = {
-      '1': require('./../../assets/image/feed/001.jpg'),
-      '2': require('./../../assets/image/feed/002.jpg'),
-      '3': require('./../../assets/image/feed/003.jpg'),
-      '4': require('./../../assets/image/feed/004.jpg'),
-      '5': require('./../../assets/image/feed/005.jpg'),
-      '6': require('./../../assets/image/feed/006.jpg'),
-      '7': require('./../../assets/image/feed/007.jpg'),
-      '8': require('./../../assets/image/feed/008.jpg')
+      '1': require('../image/feed/001.jpg'),
+      '2': require('../image/feed/002.jpg'),
+      '3': require('../image/feed/003.jpg'),
+      '4': require('../image/feed/004.jpg'),
+      '5': require('../image/feed/005.jpg'),
+      '6': require('../image/feed/006.jpg'),
+      '7': require('../image/feed/007.jpg'),
+      '8': require('../image/feed/008.jpg')
     };
 
     const profil = {
-      '1': require('./../../assets/image/profil-256/256_35.jpg'),
-      '2': require('./../../assets/image/profil-256/256_34.jpg'),
-      '3': require('./../../assets/image/profil-256/256_33.jpg'),
-      '4': require('./../../assets/image/profil-256/256_32.jpg'),
-      '5': require('./../../assets/image/profil-256/256_31.jpg'),
-      '6': require('./../../assets/image/profil-256/256_30.jpg'),
-      '7': require('./../../assets/image/profil-256/256_29.jpg'),
-      '8': require('./../../assets/image/profil-256/256_28.jpg')
+      '1': require('../image/profil-256/256_35.jpg'),
+      '2': require('../image/profil-256/256_34.jpg'),
+      '3': require('../image/profil-256/256_33.jpg'),
+      '4': require('../image/profil-256/256_32.jpg'),
+      '5': require('../image/profil-256/256_31.jpg'),
+      '6': require('../image/profil-256/256_30.jpg'),
+      '7': require('../image/profil-256/256_29.jpg'),
+      '8': require('../image/profil-256/256_28.jpg')
     };
 
     const profilName = {

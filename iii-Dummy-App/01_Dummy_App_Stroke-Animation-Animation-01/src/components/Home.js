@@ -47,19 +47,19 @@ class Home extends Component {
           <Left>
             <Image
               style={styles.headerImageLeft}
-              source={require('./../../assets/icons/png/cameraicon.png')}
+              source={require('../icons/png/cameraicon.png')}
             />
           </Left>
           <Body>
             <Image
               style={styles.headerLogo}
-              source={require('./../../assets/image/logo/instagram_logo.png')}></Image>
+              source={require('../image/logo/instagram_logo.png')}></Image>
             {/* <Text>Instagram</Text> */}
           </Body>
           <Right>
             <Image
               style={styles.headerImageRight}
-              source={require('./../../assets/icons/png/sendMessage.png')}
+              source={require('../icons/png/sendMessage.png')}
             />
           </Right>
         </Header>
@@ -80,47 +80,47 @@ class Home extends Component {
                 }}>
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_0.jpg')}
+                  source={require('../image/profil-256/256_0.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_1.jpg')}
+                  source={require('../image/profil-256/256_1.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_2.jpg')}
+                  source={require('../image/profil-256/256_2.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_3.jpg')}
+                  source={require('../image/profil-256/256_3.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_4.jpg')}
+                  source={require('../image/profil-256/256_4.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_5.jpg')}
+                  source={require('../image/profil-256/256_5.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_6.jpg')}
+                  source={require('../image/profil-256/256_6.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_7.jpg')}
+                  source={require('../image/profil-256/256_7.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_8.jpg')}
+                  source={require('../image/profil-256/256_8.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_9.jpg')}
+                  source={require('../image/profil-256/256_9.jpg')}
                 />
                 <Thumbnail
                   style={styles.thumbnailWrapper}
-                  source={require('./../../assets/image/profil-256/256_10.jpg')}
+                  source={require('../image/profil-256/256_10.jpg')}
                 />
               </ScrollView>
             </View>

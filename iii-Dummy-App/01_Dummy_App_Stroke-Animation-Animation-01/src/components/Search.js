@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 import {
   View,
@@ -7,7 +7,7 @@ import {
   Image,
   TextInput,
   Dimensions
-} from "react-native";
+} from 'react-native';
 import {
   Container,
   Content,
@@ -16,32 +16,32 @@ import {
   Left,
   Right,
   Body
-} from "native-base";
+} from 'native-base';
 
 const ownImages = [
-  require("./../../assets/image/search/001.jpg"),
-  require("./../../assets/image/search/002.jpg"),
-  require("./../../assets/image/search/003.jpg"),
-  require("./../../assets/image/search/004.jpg"),
-  require("./../../assets/image/search/005.jpg"),
-  require("./../../assets/image/search/006.jpg"),
-  require("./../../assets/image/search/007.jpg"),
-  require("./../../assets/image/search/008.jpg"),
-  require("./../../assets/image/search/009.jpg"),
-  require("./../../assets/image/search/010.jpg"),
-  require("./../../assets/image/search/011.jpg"),
-  require("./../../assets/image/search/012.jpg"),
-  require("./../../assets/image/search/013.jpg"),
-  require("./../../assets/image/search/014.jpg"),
-  require("./../../assets/image/search/015.jpg"),
-  require("./../../assets/image/search/016.jpg"),
-  require("./../../assets/image/search/017.jpg"),
-  require("./../../assets/image/search/018.jpg"),
-  require("./../../assets/image/search/019.jpg"),
-  require("./../../assets/image/search/020.jpg")
+  require('../image/search/001.jpg'),
+  require('../image/search/002.jpg'),
+  require('../image/search/003.jpg'),
+  require('../image/search/004.jpg'),
+  require('../image/search/005.jpg'),
+  require('../image/search/006.jpg'),
+  require('../image/search/007.jpg'),
+  require('../image/search/008.jpg'),
+  require('../image/search/009.jpg'),
+  require('../image/search/010.jpg'),
+  require('../image/search/011.jpg'),
+  require('../image/search/012.jpg'),
+  require('../image/search/013.jpg'),
+  require('../image/search/014.jpg'),
+  require('../image/search/015.jpg'),
+  require('../image/search/016.jpg'),
+  require('../image/search/017.jpg'),
+  require('../image/search/018.jpg'),
+  require('../image/search/019.jpg'),
+  require('../image/search/020.jpg')
 ];
 
-const { width, height } = Dimensions.get("screen");
+const { width, height } = Dimensions.get('screen');
 
 class Search extends Component {
   renderSectionOne = () => {
@@ -54,8 +54,7 @@ class Search extends Component {
             { height: width / 3 },
             { marginBottom: 2 },
             index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 0 }
-          ]}
-        >
+          ]}>
           <Image
             style={{ flex: 1, width: undefined, height: undefined }}
             source={image}
@@ -68,19 +67,18 @@ class Search extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left style={{ flexDirection: "row", alignContent: "center" }}>
+          <Left style={{ flexDirection: 'row', alignContent: 'center' }}>
             <Image
               style={styles.searchIcon}
-              source={require("./../../assets/icons/png/search-outline.png")}
+              source={require('../icons/png/search-outline.png')}
             />
             <TextInput
               style={{ fontSize: 20, marginLeft: 10 }}
-              placeholder="Suchen"
-            ></TextInput>
+              placeholder="Suchen"></TextInput>
           </Left>
         </Header>
         <Content style={{ marginTop: 7 }}>
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
             {this.renderSectionOne()}
           </View>
         </Content>

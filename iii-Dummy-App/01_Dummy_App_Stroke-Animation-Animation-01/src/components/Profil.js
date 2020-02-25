@@ -20,35 +20,35 @@ import {
   Icon
 } from 'native-base';
 
-const gridActive = require('./../../assets/icons/png/grid.png');
-const gridNoActive = require('./../../assets/icons/png/grid-no-active.png');
-const linkedActive = require('./../../assets/icons/png/linking.png');
-const linkedNoActive = require('./../../assets/icons/png/linking-no-active.png');
+const gridActive = require('../icons/png/grid.png');
+const gridNoActive = require('../icons/png/grid-no-active.png');
+const linkedActive = require('../icons/png/linking.png');
+const linkedNoActive = require('../icons/png/linking-no-active.png');
 
 const ownImages = [
-  require('./../../assets/image/profil/001.jpg'),
-  require('./../../assets/image/profil/002.jpg'),
-  require('./../../assets/image/profil/003.jpg'),
-  require('./../../assets/image/profil/004.jpg'),
-  require('./../../assets/image/profil/005.jpg'),
-  require('./../../assets/image/profil/006.jpg'),
-  require('./../../assets/image/profil/007.jpg'),
-  require('./../../assets/image/profil/008.jpg'),
-  require('./../../assets/image/profil/009.jpg'),
-  require('./../../assets/image/profil/010.jpg')
+  require('../image/profil/001.jpg'),
+  require('../image/profil/002.jpg'),
+  require('../image/profil/003.jpg'),
+  require('../image/profil/004.jpg'),
+  require('../image/profil/005.jpg'),
+  require('../image/profil/006.jpg'),
+  require('../image/profil/007.jpg'),
+  require('../image/profil/008.jpg'),
+  require('../image/profil/009.jpg'),
+  require('../image/profil/010.jpg')
 ];
 
 const linkedImages = [
-  require('./../../assets/image/links/001.jpg'),
-  require('./../../assets/image/links/002.jpg'),
-  require('./../../assets/image/links/003.jpg'),
-  require('./../../assets/image/links/004.jpg'),
-  require('./../../assets/image/links/005.jpg'),
-  require('./../../assets/image/links/006.jpg'),
-  require('./../../assets/image/links/007.jpg'),
-  require('./../../assets/image/links/008.jpg'),
-  require('./../../assets/image/links/009.jpg'),
-  require('./../../assets/image/links/010.jpg')
+  require('../image/links/001.jpg'),
+  require('../image/links/002.jpg'),
+  require('../image/links/003.jpg'),
+  require('../image/links/004.jpg'),
+  require('../image/links/005.jpg'),
+  require('../image/links/006.jpg'),
+  require('../image/links/007.jpg'),
+  require('../image/links/008.jpg'),
+  require('../image/links/009.jpg'),
+  require('../image/links/010.jpg')
 ];
 
 const { width, height } = Dimensions.get('window');
@@ -134,7 +134,7 @@ class Profil extends Component {
           <Right>
             <Image
               style={styles.headerImageRight}
-              source={require('./../../assets/icons/png/menu_profil.png')}
+              source={require('../icons/png/menu_profil.png')}
             />
           </Right>
         </Header>
@@ -145,7 +145,7 @@ class Profil extends Component {
               <View style={{ flex: 1, alignItems: 'center' }}>
                 <Image
                   style={styles.imageUser}
-                  source={require('./../../assets/image/profil-256/256_35.jpg')}
+                  source={require('../image/profil-256/256_35.jpg')}
                 />
               </View>
               <View style={{ flex: 3 }}>

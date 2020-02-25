@@ -43,7 +43,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_0.jpg')}
+                source={require('../image/profil-256/256_0.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>simba_adventures_ </Text>
@@ -58,7 +58,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_15.jpg')}
+                source={require('../image/profil-256/256_15.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>helloWorld </Text>
@@ -73,7 +73,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_15.jpg')}
+                source={require('../image/profil-256/256_15.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>helloWorld </Text>
@@ -81,7 +81,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -89,7 +89,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_5.jpg')}
+                source={require('../image/profil-256/256_5.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>yoxiok </Text>
@@ -97,7 +97,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -105,7 +105,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_29.jpg')}
+                source={require('../image/profil-256/256_29.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>abolfazl </Text>
@@ -113,7 +113,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -121,7 +121,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_24.jpg')}
+                source={require('../image/profil-256/256_24.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>amon </Text>
@@ -129,7 +129,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -137,7 +137,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_22.jpg')}
+                source={require('../image/profil-256/256_22.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>drephotoworkmacro </Text>
@@ -145,7 +145,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -153,7 +153,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_5.jpg')}
+                source={require('../image/profil-256/256_5.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>flyouzdo </Text>
@@ -161,7 +161,7 @@ class Notification extends Component {
               </View>
               <Image
                 style={styles.imageWrapper}
-                source={require('./../../assets/image/profil/001.jpg')}
+                source={require('../image/profil/001.jpg')}
               />
             </View>
             {/* Endlike */}
@@ -169,7 +169,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_5.jpg')}
+                source={require('../image/profil-256/256_5.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>flyouzdo </Text>
@@ -184,7 +184,7 @@ class Notification extends Component {
             <View style={styles.wrapper}>
               <Thumbnail
                 style={styles.profilWrapper}
-                source={require('./../../assets/image/profil-256/256_22.jpg')}
+                source={require('../image/profil-256/256_22.jpg')}
               />
               <View style={styles.textWrapper}>
                 <Text>drephotoworkmacro </Text>
