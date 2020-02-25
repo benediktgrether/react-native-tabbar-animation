@@ -1,6 +1,6 @@
 # react-native-tabbar-animation
 
-Work from my Gradiation for my Bachelor of Scienece 
+Work from my Gradiation for my Bachelor of Science
 
 ## Get started
 
