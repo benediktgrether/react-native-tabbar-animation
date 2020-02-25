@@ -1,7 +1,5 @@
 # react-native-tabbar-animation
 
-Work from my Gradiation for my Bachelor of Science
-
 ## Get started
 
 1. Install NodeJS and [Expo](https://expo.io/learn) on your local machine.
