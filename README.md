@@ -2,7 +2,7 @@
 
 ## Get started
 
-1. Install NodeJS and [Expo](https://expo.io/learn) on your local machine.
+1. Install [NodeJS](https://nodejs.org/en/) and [Expo](https://expo.io/learn) on your local machine.
 
 2. ``` npm install expo-cli --global ```
 
