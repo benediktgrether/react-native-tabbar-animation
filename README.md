@@ -14,4 +14,7 @@ Work from my Gradiation for my Bachelor of Scienece
  $ expo start --ios
 ```
 
-[Game - Github Pages](https://benediktgrether.github.io/run_bene_run/)
+
+## Githup Pages for all Animations
+
+[Animation 01](https://benediktgrether.github.io/react-native-tabbar-animation/ii-Tab-Bar-Animation/01_Stroke-Animation-Animation-01/web-build/)
