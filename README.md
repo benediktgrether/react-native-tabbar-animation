@@ -18,7 +18,7 @@
 Please visit to get started with Expo  
 [get-started](https://docs.expo.io/versions/v36.0.0/get-started/installation/) 
 
-How to Install Android Studio
+How to Install Android Studio  
 [Android Studio](https://codeburst.io/setting-up-development-environment-using-react-native-on-windows-dd240e69f776)
 
 
