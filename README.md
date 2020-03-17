@@ -41,8 +41,6 @@ There is a web view for each animation
 
 ### Dummy-App Animation
 
-* Some Issues with the Pictures for the web view.
-
 | Animation | Web | iOS | Android |
 |---|---|---|---|
 | 01 - Dummy-App - Stroke Animation | [Animation 01](https://benediktgrether.github.io/react-native-tabbar-animation/iii-Dummy-App/01_Dummy_App_Stroke-Animation-Animation-01/web-build/index.html) | ![ 01 - iOS](./iii-Dummy-App/01_Dummy_App_Stroke-Animation-Animation-01/dist/dummy_01_ani_iPhone_code.png "01 - iOS") | ![ 01 - Android](./iii-Dummy-App/01_Dummy_App_Stroke-Animation-Animation-01/dist/dummy_01_ani_android_code.png "01 - Android") |
